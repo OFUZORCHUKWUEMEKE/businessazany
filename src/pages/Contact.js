@@ -10,7 +10,7 @@ import { SiDiscord } from "react-icons/si"
 import Footer from '../components/Footer';
 import { Input } from "@material-tailwind/react";
 import { Textarea } from "@material-tailwind/react";
-import { TbPhoneCall } from "react-icons/tb"
+import { TbPhoneCall } from "react-icons/tb"        
 
 const Contact = () => {
     return (

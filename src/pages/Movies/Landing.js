@@ -5,7 +5,7 @@ import Navbar from '../../components/Navbar'
 const Event = () => {
     return (
         <>
-            <Navbar />
+            <Navbar />   
             <div className="h-[75vh] flex justify-center items-center">
                 <div className="py-4 space-y-3">
                     <h2 className='text-center'>You have not Listed a Movie</h2>
