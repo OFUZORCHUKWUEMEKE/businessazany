@@ -12,7 +12,7 @@ const Event = () => {
                     <Link to="/movie/create">
                         <button className='bg-[#1B7CFC] py-2 px-4 mx-2 text-white rounded-md'>Create Movie Ticket</button>
                     </Link>
-
+    
                 </div>
             </div>
         </>
