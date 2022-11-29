@@ -81,7 +81,7 @@ const Contact = () => {
                             <Input label="Message Title" className='bg-gray-50 h-[8vh]' />
                         </div>
                         <div className="">
-                            <Textarea label="Type your message here..." className='bg-gray-50 h-[20vh]' />
+                            <Textarea label="Type your message here..." className='bg-gray-50 h-[20vh] resize-none' />
                         </div>
                         <div className="flex justify-end">
                             <button type='submit' className="secondary-button ">Send message</button>

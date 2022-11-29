@@ -2,7 +2,7 @@ import { Stack, TextField } from '@mui/material'
 import React from 'react'
 import Navbar from '../../components/Navbar'
 
-const CreateTicket = () => {
+const CreateMovieTicket = () => {
     return (
         <>
             <Navbar />
@@ -28,4 +28,4 @@ const CreateTicket = () => {
     )
 }
 
-export default CreateTicket
+export default CreateMovieTicket

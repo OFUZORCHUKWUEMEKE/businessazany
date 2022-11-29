@@ -8,7 +8,7 @@ const Ticket = () => {
             <div className='max-h-screen py-5'>
                 <div className='w-[25%] mx-auto'>
                     <Stack spacing={3}>
-                        <h1 className='text-2xl font-bold text-center'>Create Ticket</h1>
+                        <h1 className='text-2xl font-bold text-center'>Edit Movie</h1>
                         <form className='w-full space-y-4'>
                             <TextField label="Movie Title" variant="outlined" className='w-full mx-auto' />
                             <TextField label="Story" variant="outlined" className='w-full mx-auto' />
