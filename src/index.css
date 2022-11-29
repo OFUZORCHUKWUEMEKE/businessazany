@@ -1,3 +1,28 @@
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components{
+  .secondary-button{
+      @apply rounded px-3 py-3 bg-[#1b7cfc] text-white
+  }
+  .primary-button{
+      @apply rounded px-4 py-3 bg-[#E51B48] text-white
+  }
+
+  .hover{
+      @apply bg-[#1b7cfc] text-white rounded-xl
+  }
+  .text-blue{
+    @apply text-[rgb(27,124,252)]
+  }
+  .list-style{
+    @apply hover:hover px-4 py-16  list-decimal text-center justify-center rounded-xl bg-white
+  }
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -11,3 +36,187 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* Header transition */
+.transition{
+  height: 100vh;
+  width: 100%;
+  background-image: url("../public/images/hero\ \(1\).png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: 5s;
+
+  animation-name: animate;
+  animation-direction: alternate-reverse;
+  animation-duration: 10s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-play-state: running;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes animate {
+  0%{
+    background-image: url("/public/images/hero\ \(2\).png");
+  }
+  20%{
+    background-image: url("/public/images/hero\ \(3\).png");
+  }
+  40%{
+    background-image: url("/public/images/hero\ \(4\).png");
+  }
+}
+
+/* How it works */
+.girl{
+  height: 420.47px;
+  width: 329.91px;
+  background-image: url("../public/images/Girl\ laughing.png");
+  background-size: cover;
+}
+.blue-background{
+  background-image: url("../public/images/blue\ background.png");
+  height: 420.47px;
+  width: 329.91px;
+  background-repeat: no-repeat;
+}
+
+/* Find sites */
+.iphone{
+  height: 70vh;
+  width: 100%;
+  background-image: url("../public/images/iphone\ \(2\).png");
+  background-size: cover;
+}
+
+/* Banner */
+.blog1{
+  height: 180px;
+  width: 100%;
+  background-image: url("../public/images/blog1.png");
+  background-size: cover;
+}
+.blog2{
+  height: 180px;
+  width: 100%;
+  background-image: url("../public/images/blog2.png");
+  background-size: cover;
+  
+}
+.blog3{
+  height: 180px;
+  width: 100%;
+  background-image: url("../public/images/blog3.png");
+  background-size: cover;
+}
+
+/* Blogs */
+.bicycle{
+  background-image: url("/public/images/Bicycle.png");
+  background-size: cover;
+  height: 100vh;
+}
+
+.blog5{
+  height: 30vh;
+  background-image: url("../public/images/blog4.png");
+  background-size: cover;
+}
+.blog4{
+  height: 30vh;
+  background-image: url("../public/images/blog5.png");
+  background-size: cover;
+}
+.blog6{
+  height: 30vh;
+  background-image: url("../public/images/blog6.png");
+  background-size: cover;
+}
+
+.aviation{
+  width: 180px;
+  height: 160px;
+  background-image: url("../public/images/Ticketting1.png");
+  background-size: cover;
+}
+.aviation2{
+  width: 180px;
+  height: 160px;
+  background-image: url("../public/images/Ticketting2.png");
+  background-size: cover;
+}
+.aviation3{
+  width: 180px;
+  height: 160px;
+  background-image: url("../public/images/Ticketting3.png");
+  background-size: cover;
+}
+
+.aviation-big{
+  width: 501px;
+  height: 350px;
+  background-image: url("../public/images/Ticketting1.png");
+  background-size: cover;
+}
+.electricity-big{
+  width: 501px;
+  height: 350px;
+  background-image: url("../public/images/Electricity.png");
+  background-size: cover;
+}
+
+
+.electricity{
+  width: 180px;
+  height: 160px;
+  background-image: url("../public/images/Electricity.png");
+  background-size: cover;
+}
+.hospital{
+  width: 180px;
+  height: 160px;
+  background-image: url("../public/images/Hospital.png");
+  background-size: cover;
+}
+.internet{
+  width: 180px;
+  height: 160px;
+  background-image: url("../public/images/Internet.png");
+  background-size: cover;
+}
+.pharmacy{
+  width: 180px;
+  height: 160px;
+  background-image: url("../public/images/Pharmacy.png");
+  background-size: cover;
+}
+.resturants{
+  width: 180px;
+  height: 160px;
+  background-image: url("../public/images/Restaurants.png");
+  background-size: cover;
+}
+.school{
+  width: 180px;
+  height: 160px;
+  background-image: url("../public/images/School.png");
+  background-size: cover;
+}
+.shopping{
+  width: 180px;
+  height: 160px;
+  background-image: url("../public/images/Shopping.png");
+  background-size: cover;
+}
+.tv{
+  width: 180px;
+  height: 160px;
+  background-image: url("../public/images/Tv.png");
+  background-size: cover;
+}
+
+
+
+
+
