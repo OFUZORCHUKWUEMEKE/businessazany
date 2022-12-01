@@ -23,6 +23,7 @@ import CreateEventTicket from './pages/Event/CreateTicket';
 import CreateTicketEvent from './pages/Event/CreateTicket';
 import EditEvent from './pages/Event/EditEvent';
 import Edit2 from './pages/Event/Edit2';
+import EventHistory from './pages/Event/SalesHistory';
 
 function App() {
   return (
@@ -38,19 +39,20 @@ function App() {
       <Route path='/emailVerification' element={<EmailVerification />} />
       {/* movie route */}
       <Route path="/movie/landing" element={<Event />} />
-      <Route path="/movie/create" element={<CreateTicket/>} />
+      <Route path="/movie/create" element={<CreateTicket />} />
       <Route path="/movie/edit" element={<Edit />} />
       <Route path="/movie/ticket" element={<Ticket />} />
-      <Route path="/movie/salesHistory" element={<SalesHistory/>} />
-      <Route path="/movie/editmovie" element={<EditMovie/>} />
-      <Route path="/movie/createticket" element={<EditMovie/>} />
+      <Route path="/movie/salesHistory" element={<SalesHistory />} />
+      <Route path="/movie/editmovie" element={<EditMovie />} />
+      <Route path="/movie/createticket" element={<EditMovie />} />
 
       {/* event route */}
-      <Route path="/event/landing" element={<Landing/>}/>
-      <Route path="/event/create" element={<CreateEvent/>}/>
-      <Route path="/event/edit" element={<Edit2/>}/>
-      <Route path="/event/createEventTicket" element={<CreateTicketEvent/>}/>
-      <Route path="/event/editEvent" element={<EditEvent/>}/>
+      <Route path="/event/landing" element={<Landing />} />
+      <Route path="/event/create" element={<CreateEvent />} />
+      <Route path="/event/edit" element={<Edit2 />} />
+      <Route path="/event/createEventTicket" element={<CreateTicketEvent />} />
+      <Route path="/event/salesHistory" element={<EventHistory />} />
+      <Route path="/event/editEvent" element={<EditEvent />} />
     </Routes>
   );
 }

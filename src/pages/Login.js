@@ -39,13 +39,14 @@ const Login = () => {
                         <button className='p-3 px-4 bg-[#DBE1E7] w-full rounded-md' onClick={() => handleOpened()}>Login with AVC</button>
                     </div>
                 ) : (
-                    <div className='space-y-3 py-6 h-[40vh]'>
-                        <form className='space-y-3 flex justify-center flex-col'>
+                    <div className='space-y-3 py-6 h-[40vh] w-[25%]'>
+                        <form className='space-y-3 flex justify-center flex-col w-full'>
                             <TextField
                                 id="outlined-password-input"
                                 label="Email"
                                 type="azany@gmail.com"
                                 autoComplete="current-password"
+                                className='w-full'
                             />
                             <TextField
                                 id="outlined-password-input"
