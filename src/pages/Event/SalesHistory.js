@@ -4,17 +4,17 @@ import { SlLocationPin } from "react-icons/sl"
 import { useState } from 'react';
 import TransactionTable from '../../components/Transaction';
 
-const SalesHistory = () => {
+const EventHistory = () => {
     const [tab, setTab] = useState(false)
 
-    const [action,setAction] = useState(true)
-    const [old,setOld] = useState(false)
+    const [action, setAction] = useState(true)
+    const [old, setOld] = useState(false)
 
-    const handleAction = ()=>{
+    const handleAction = () => {
         setAction(true)
         setOld(false)
     }
-    const handleOld=()=>{
+    const handleOld = () => {
         setOld(true)
         setAction(false)
     }
@@ -41,30 +41,30 @@ const SalesHistory = () => {
 
                     <div className="space-y-5">
                         <div className="shadow-md flex bg-white p-3 gap-20 px-20 mb-10">
-                            <p className={action?`cursor-pointer text-blue-500`:'cursor-pointer text-black'} onClick={()=>handleAction()}>Action Movies</p>
-                            <p className={old?`cursor-pointer text-blue-500`:'cursor-pointer text-black'} onClick={() => handleOld()}>Old Movies</p>
+                            <p className={action ? `cursor-pointer text-blue-500` : 'cursor-pointer text-black'} onClick={() => handleAction()}>Active Event</p>
+                            <p className={old ? `cursor-pointer text-blue-500` : 'cursor-pointer text-black'} onClick={() => handleOld()}>History</p>
                         </div>
 
                         {action && <div className="md:grid grid-cols-3 items-center gap-3 ">
                             <div className="">
-                                <img src="/images/Movie.png" alt="" className="rounded-t-xl object-cover w-[250%] h-[30vh]" />
+                                <img src="/images/event.png" alt="" className="rounded-t-xl object-cover w-[250%] h-[30vh]" />
                                 <div className="p-3 py-2 space-y-4 flex flex-col bg-white">
-                                    <h1 className="font-semibold">Movie 2</h1>
-                                    <button className='bg-transparent border border-[#1B7CFC] py-4 px-12 rounded-md text-[#1B7CFC]'>Add tickets</button>
+                                    <h1 className="font-semibold">Event 2</h1>
+                                    <button className='bg-transparent border border-[#1B7CFC] py-4 px-12 rounded-md text-[#1B7CFC]'>Add Tickets</button>
                                 </div>
                             </div>
                             <div className="">
-                                <img src="/images/Movie.png" alt="" className="rounded-t-xl object-cover w-[250%] h-[30vh]" />
+                                <img src="/images/event.png" alt="" className="rounded-t-xl object-cover w-[250%] h-[30vh]" />
                                 <div className="p-3 py-2 space-y-4 flex flex-col bg-white">
-                                    <h1 className="font-semibold">Movie 1</h1>
-                                    <button className='bg-transparent border border-[#1B7CFC] py-4 px-12 rounded-md text-[#1B7CFC]'>Add tickets</button>
+                                    <h1 className="font-semibold">Event 1</h1>
+                                    <button className='bg-transparent border border-[#1B7CFC] py-4 px-12 rounded-md text-[#1B7CFC]'>Add Tickets</button>
                                 </div>
                             </div>
                             <div className="">
-                                <img src="/images/Movie.png" alt="" className="rounded-t-xl object-cover w-[250%] h-[30vh]" />
+                                <img src="/images/event.png" alt="" className="rounded-t-xl object-cover w-[250%] h-[30vh]" />
                                 <div className="p-3 py-2 space-y-4 flex flex-col bg-white">
-                                    <h1 className="font-semibold">Movie 3</h1>
-                                    <button className=' bg-transparent border border-[#1B7CFC] text-[#1B7CFC] py-4 px-12 rounded-md '>Add tickets</button>
+                                    <h1 className="font-semibold">Event 3</h1>
+                                    <button className=' bg-transparent border border-[#1B7CFC] text-[#1B7CFC] py-4 px-12 rounded-md '>Add Tickets</button>
                                 </div>
                             </div>
                         </div>}
@@ -73,7 +73,7 @@ const SalesHistory = () => {
                             <div className="">
                                 <img src="/images/Old.png" alt="" className="rounded-t-xl object-cover w-[250%] h-[30vh]" />
                                 <div className="p-3 py-2 space-y-4 flex flex-col bg-white">
-                                    <h1 className="font-semibold">Movie 2</h1>
+                                    <h1 className="font-semibold">Event 2</h1>
                                     <div className=" text-white w-[30%]">
                                         <p className="bg-[#1B7CFC] text-white rounded-xl py-1 px-4">30RP</p>
                                     </div>
@@ -120,4 +120,4 @@ const SalesHistory = () => {
     );
 };
 
-export default SalesHistory;
+export default EventHistory;
