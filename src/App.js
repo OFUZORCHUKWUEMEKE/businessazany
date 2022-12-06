@@ -25,6 +25,12 @@ import Edit2 from './pages/Event/Edit2';
 import EventHistory from './pages/Event/SalesHistory';
 import ActiveMovies from './pages/Movies/ActiveMovies';
 import MoreEvents from './pages/Event/MoreEvents';
+import TransportHistory from './pages/Transport/TransportHistory';
+import CreateRoute from './pages/Transport/CreateRoute';
+import CreateTicketInfo from './pages/Transport/CreateTicketInfo';
+import CreateVehicleInfo from './pages/Transport/CreateVehicleInfo';
+import CreateVehicleTicket from './pages/Transport/CreateVehicleTicket';
+import TicketLanding from './pages/Transport/TicketLanding';
 
 function App() {
   return (
@@ -47,7 +53,7 @@ function App() {
       <Route path="/movie/salesHistory" element={<SalesHistory />} />
       <Route path="/movie/editmovie" element={<EditMovie />} />
       <Route path="/movie/createticket" element={<EditMovie />} />
-      <Route path="/movie/activeMovies" element={<ActiveMovies/>} />
+      <Route path="/movie/activeMovies" element={<ActiveMovies />} />
 
       {/* event route */}
       <Route path="/event/landing" element={<Landing />} />
@@ -57,7 +63,18 @@ function App() {
       <Route path="/event/salesHistory" element={<EventHistory />} />
       <Route path="/event/editEvent" element={<EditEvent />} />
       <Route path="/event/moreEvents" element={<MoreEvents />} />
+
+
+{/* Transport route */}
+
+      <Route path="/transport/ticketLanding" element={<TicketLanding/>} />
+      <Route path="/transport/createRoute" element={<CreateRoute/>} />
+      <Route path="/transport/createTicketInfo" element={<CreateTicketInfo/>} />
+      <Route path="/transport/createVehicleInfo" element={<CreateVehicleInfo/>} />
+      <Route path="/transport/createVehicleTicket" element={<CreateVehicleTicket/>} />
+      <Route path="/transport/transportHistory" element={<TransportHistory />} />
     </Routes>
+
   );
 }
 
