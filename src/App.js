@@ -31,6 +31,13 @@ import CreateTicketInfo from './pages/Transport/CreateTicketInfo';
 import CreateVehicleInfo from './pages/Transport/CreateVehicleInfo';
 import CreateVehicleTicket from './pages/Transport/CreateVehicleTicket';
 import TicketLanding from './pages/Transport/TicketLanding';
+import AviationLanding from './pages/Aviation/AviationLanding';
+import AviationRouteInfo from './pages/Aviation/CreateRouteInfo';
+import CreateRouteInfo from './pages/Aviation/CreateRouteInfo';
+import CreateFlightInfo from './pages/Aviation/CreateFlightInfo';
+import AviationTicketInfo from './pages/Aviation/AviationTicketInfo';
+import AviationHistory from './pages/Aviation/AviationHistory';
+import CreateFlightTicket from './pages/Aviation/CreateFlightTicket';
 
 function App() {
   return (
@@ -65,14 +72,21 @@ function App() {
       <Route path="/event/moreEvents" element={<MoreEvents />} />
 
 
-{/* Transport route */}
-
-      <Route path="/transport/ticketLanding" element={<TicketLanding/>} />
+      {/* Transport route */}
+      <Route path="/transport/ticketLanding" element={<TicketLanding />} />
       <Route path="/transport/createRoute" element={<CreateRoute/>} />
-      <Route path="/transport/createTicketInfo" element={<CreateTicketInfo/>} />
-      <Route path="/transport/createVehicleInfo" element={<CreateVehicleInfo/>} />
-      <Route path="/transport/createVehicleTicket" element={<CreateVehicleTicket/>} />
+      <Route path="/transport/createVehicleInfo" element={<CreateVehicleInfo />} />
+      <Route path="/transport/createTicketInfo" element={<CreateTicketInfo />} />
       <Route path="/transport/transportHistory" element={<TransportHistory />} />
+      <Route path="/transport/createVehicleTicket" element={<CreateVehicleTicket />} />
+
+      {/* Avaition */}
+      <Route path="/aviation/ticketLanding" element={<AviationLanding/>} />
+      <Route path="/aviation/createRouteInfo" element={<CreateRouteInfo/>} />
+      <Route path="/aviation/createFlightInfo" element={<CreateFlightInfo/>} />
+      <Route path="/aviation/aviationTicketInfo" element={<AviationTicketInfo/>} />
+      <Route path="/transport/aviationtHistory" element={<AviationHistory />} />
+      <Route path="/transport/createFlightTicket" element={<CreateFlightTicket/>} />
     </Routes>
 
   );

@@ -15,7 +15,6 @@ const CreateEvent = () => {
                             <TextField label="Date" variant="outlined" className='w-full mx-auto' />
                             <TextField label="Time" variant="outlined" className='w-full mx-auto' />
                             <TextField label="Add Thumbnail" variant="outlined" className='w-full mx-auto' />
-                            
                             <button className='py-4 bg-[#1B7CFC] text-center w-full text-white  px-4 rounded-md'>Create Event</button>
                         </form>
                     </Stack>
