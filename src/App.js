@@ -38,6 +38,8 @@ import CreateFlightInfo from './pages/Aviation/CreateFlightInfo';
 import AviationTicketInfo from './pages/Aviation/AviationTicketInfo';
 import AviationHistory from './pages/Aviation/AviationHistory';
 import CreateFlightTicket from './pages/Aviation/CreateFlightTicket';
+import BillingServicesProfile from './pages/Billing/BillingServiceProfile';
+import MyWallet from './pages/Wallet/MyWallet';
 
 function App() {
   return (
@@ -87,6 +89,12 @@ function App() {
       <Route path="/aviation/aviationTicketInfo" element={<AviationTicketInfo/>} />
       <Route path="/transport/aviationtHistory" element={<AviationHistory />} />
       <Route path="/transport/createFlightTicket" element={<CreateFlightTicket/>} />
+
+      {/* BillingServicesProfile */}
+      <Route path="/billing/billingServicesProfile" element={<BillingServicesProfile/>} />
+
+      {/* Wallet */}
+      <Route path="/wallet/myWallet" element={<MyWallet/>} />
     </Routes>
 
   );
