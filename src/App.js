@@ -87,8 +87,8 @@ function App() {
       <Route path="/aviation/createRouteInfo" element={<CreateRouteInfo/>} />
       <Route path="/aviation/createFlightInfo" element={<CreateFlightInfo/>} />
       <Route path="/aviation/aviationTicketInfo" element={<AviationTicketInfo/>} />
-      <Route path="/transport/aviationtHistory" element={<AviationHistory />} />
-      <Route path="/transport/createFlightTicket" element={<CreateFlightTicket/>} />
+      <Route path="/aviation/aviationtHistory" element={<AviationHistory />} />
+      <Route path="/aviation/createFlightTicket" element={<CreateFlightTicket/>} />
 
       {/* BillingServicesProfile */}
       <Route path="/billing/billingServicesProfile" element={<BillingServicesProfile/>} />
