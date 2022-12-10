@@ -24,6 +24,7 @@ import CreateTicketEvent from './pages/Event/CreateTicket';
 import EditEvent from './pages/Event/EditEvent';
 import Edit2 from './pages/Event/Edit2';
 import EventHistory from './pages/Event/SalesHistory';
+import Wallet from './pages/Wallet';
 
 function App() {
   return (
@@ -53,6 +54,8 @@ function App() {
       <Route path="/event/createEventTicket" element={<CreateTicketEvent />} />
       <Route path="/event/salesHistory" element={<EventHistory />} />
       <Route path="/event/editEvent" element={<EditEvent />} />
+
+      <Route path="/wallet" element={<Wallet/>}/>
     </Routes>
   );
 }
