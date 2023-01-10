@@ -42,7 +42,7 @@ const AviationHistory = () => {
                     <div className="space-y-5 col-span-7">
                         <div className="shadow-md flex justify-around bg-white p-3 gap-20 px-20 mb-10 ">
                             <p className={action ? `cursor-pointer text-blue-500` : 'cursor-pointer  text-black'} onClick={() => handleAction()}>Routes</p>
-                            <p className={center ? `cursor-pointer text-blue-500` : 'cursor-pointer text-black'} onClick={() => handleCenter()}>Vehicle</p>
+                            <p className={center ? `cursor-pointer text-blue-500` : 'cursor-pointer text-black'} onClick={() => handleCenter()}>Flight</p>
                             <p className={old ? `cursor-pointer text-blue-500` : 'cursor-pointer text-black'} onClick={() => handleOld()}>Tickets</p>
                         </div>
 

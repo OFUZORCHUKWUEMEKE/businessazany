@@ -11,10 +11,10 @@ const CreateTicketInfo = () => {
     const [departure, setDeparture] = useState(10);
     const [destination, setDestination] = useState(20);
 
-    const handleDepature = (event: SelectChangeEvent) => {
+    const handleDepature = (event) => {
         setDeparture(event.target.value)
     };
-    const handleDestination = (event: SelectChangeEvent) => {
+    const handleDestination = (event) => {
         setDestination(event.target.value)
     };
     return (
@@ -38,6 +38,42 @@ const CreateTicketInfo = () => {
                                 </FormControl>
                             </Box>
 
+                            <Box sx={{ minWidth: 120 }}>
+                                <FormControl fullWidth>
+                                    <InputLabel id="demo-simple-select-label">Vehicle Model</InputLabel>
+                                    <Select
+                                        value={destination}
+                                        label="Age"
+                                        onChange={handleDestination}
+                                    >
+                                        <MenuItem value={20}>Sienna</MenuItem>
+                                    </Select>
+                                </FormControl>
+                            </Box>
+                            <Box sx={{ minWidth: 120 }}>
+                                <FormControl fullWidth>
+                                    <InputLabel id="demo-simple-select-label">Reward Points</InputLabel>
+                                    <Select
+                                        value={destination}
+                                        label="Age"
+                                        onChange={handleDestination}
+                                    >
+                                        <MenuItem value={20}>800</MenuItem>
+                                    </Select>
+                                </FormControl>
+                            </Box>
+                            <Box sx={{ minWidth: 120 }}>
+                                <FormControl fullWidth>
+                                    <InputLabel id="demo-simple-select-label">Policy</InputLabel>
+                                    <Select
+                                        value={destination}
+                                        label="Age"
+                                        onChange={handleDestination}
+                                    >
+                                        <MenuItem value={20}>Refundable</MenuItem>
+                                    </Select>
+                                </FormControl>
+                            </Box>
                             <Box sx={{ minWidth: 120 }}>
                                 <FormControl fullWidth>
                                     <InputLabel id="demo-simple-select-label">Route</InputLabel>

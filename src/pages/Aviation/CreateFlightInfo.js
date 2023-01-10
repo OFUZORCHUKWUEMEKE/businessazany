@@ -6,17 +6,19 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
-
+import { useNavigate } from 'react-router-dom';
 const CreateFighteInfo = () => {
     const [departure, setDeparture] = useState(10);
     const [destination, setDestination] = useState(20);
 
-    const handleDepature = (event: SelectChangeEvent) => {
+    const handleDepature = (event) => {
         setDeparture(event.target.value)
     };
-    const handleDestination = (event: SelectChangeEvent) => {
+    const handleDestination = (event) => {
         setDestination(event.target.value)
     };
+
+    const navigate = useNavigate()
     return (
         <>
             <Navbar />
@@ -67,7 +69,7 @@ const CreateFighteInfo = () => {
                             {/* <TextField label="Add a thumbnail" variant="outlined" className='w-full mx-auto  ' /> */}
                             <img src="/images/Plane.png" alt="" className="rounded-t-xl object-cover w-[250%] h-[30vh]" />
                             <div className="py-4">
-                                <button className='py-4 bg-[#1B7CFC] text-center w-full text-white  px-4 rounded-md'>Create Vehicle Information</button>
+                                <button className='py-4 bg-[#1B7CFC] text-center w-full text-white  px-4 rounded-md' onClick={()=>navigate("/aviation/aviationTicketInfo")}>Create Vehicle Information</button>
                             </div>
                         </form>
                     </Stack>

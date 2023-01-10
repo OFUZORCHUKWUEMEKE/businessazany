@@ -5,6 +5,7 @@ import { useState } from 'react';
 import TransactionTable from '../../components/Transaction';
 import { TbArrowsLeftRight, TbEdit } from "react-icons/tb"
 import Profile from '../../components/Profile';
+import { Link } from 'react-router-dom';
 
 
 const TransportHistory = () => {
@@ -172,9 +173,15 @@ const TransportHistory = () => {
                     </div>
                 </div>
                 <div className="flex justify-end pt-[20vh] pb-[5vh]">
-                    {action && <button className="bg-[#1B7CFC] py-4 px-6 text-sm rounded-md text-white">Create Route</button>}
-                    {center && <button className="bg-[#1B7CFC] py-4 px-6 text-sm rounded-md text-white">Add Vehicle</button>}
-                    {old && <button className="bg-[#1B7CFC] py-4 px-6 text-sm rounded-md text-white">Add Ticket</button>}
+                    {action && <Link to="/transport/createRoute">
+                        <button className="bg-[#1B7CFC] py-4 px-6 text-sm rounded-md text-white">Create Route</button>
+                    </Link>}
+                    {center && <Link to="/transport/createVehicleInfo">
+                        <button className="bg-[#1B7CFC] py-4 px-6 text-sm rounded-md text-white">Add Vehicle</button>
+                    </Link>}
+                    {old && <Link to="/transport/createTicketInfo">
+                        <button className="bg-[#1B7CFC] py-4 px-6 text-sm rounded-md text-white">Add Ticket</button>
+                    </Link> }
                 </div>
 
                 {/* Sales History */}

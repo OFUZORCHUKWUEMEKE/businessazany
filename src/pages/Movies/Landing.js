@@ -21,4 +21,4 @@ const Event = () => {
         </div> 
     )
 }
-export default Event
+export default Event;
