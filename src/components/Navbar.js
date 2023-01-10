@@ -2,6 +2,9 @@ import React from 'react';
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
+
+
+    const token = JSON.parse(localStorage.getItem('token'))
     return (
         <div className='sticky top-0 bg-white z-30'>
             <div className="md:flex justify-around items-center h-[13vh] m-auto w-[85%]">
@@ -37,14 +40,34 @@ const Navbar = () => {
                     </div>
                 </div>
 
-                <div className="gap-5 md:flex hidden">
+                {token ? (
+                    <div className="gap-5 md:flex hidden">
+                        {/* <Link to="/login">
+                            <p className="hover:hover px-3 py-2">Login</p>
+                        </Link> */}
+                        <Link to="/profile">
+                            <p className="text-red-500 border border-red-500 rounded px-2 py-2">Username</p>
+                        </Link>
+                    </div>
+                ) : (
+                    <div className="gap-5 md:flex hidden">
+                        <Link to="/login">
+                            <p className="hover:hover px-3 py-2">Login</p>
+                        </Link>
+                        <Link to="/business/signup">
+                            <p className="text-red-500 border border-red-500 rounded px-2 py-2">Create Account</p>
+                        </Link>
+                    </div>
+                )}
+
+                {/* <div className="gap-5 md:flex hidden">
                     <Link to="/login">
                         <p className="hover:hover px-3 py-2">Login</p>
                     </Link>
-                    <Link to="/signup">
+                    <Link to="/business/signup">
                         <p className="text-red-500 border border-red-500 rounded px-2 py-2">Create Account</p>
                     </Link>
-                </div>
+                </div> */}
             </div>
         </div>
     );

@@ -3,7 +3,7 @@ import React from 'react'
 import Navbar from '../../components/Navbar'
 const EditMovie = () => {
     return (
-        <div className = "bg-[#F5F5F5]">
+        <div className="bg-[#F5F5F5]">
             <Navbar />
             <div className='min-h-screen py-16'>
                 <div className='w-[25%] mx-auto'>
@@ -14,7 +14,7 @@ const EditMovie = () => {
                             <TextField label="Number of tickets" variant="outlined" className='w-full mx-auto bg-white' />
                             <TextField label="Reward points" variant="outlined" className='w-full mx-auto bg-white' />
                             <div className="">
-                            <button className='py-4 my-5 bg-[#1B7CFC] text-center w-full text-white  px-4 rounded-md'>Save</button>
+                                <button className='py-4 my-5 bg-[#1B7CFC] text-center w-full text-white  px-4 rounded-md'>Save</button>
                             </div>
                         </form>
                     </Stack>

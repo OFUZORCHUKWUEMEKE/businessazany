@@ -12,11 +12,13 @@ function createData(name, calories, fat, carbs, protein,status) {
 }
 
 const rows = [
-  createData('Jeremiah Ade',"x345","VIP","26/02/2001 12:00pm", 4.0,2.0,"sucessful"),
-  createData('Jeremiah Ade',"x345","VIP","26/02/2001 12:00pm", 4.3,2.0,"sucessful"),
-  createData('Jeremiah Ade',"x345", "VIP","26/02/2001 12:00pm", 6.0,2.0,"sucessful"),
-  createData('Jeremiah Ade',"x345","VIP","26/02/2001 12:00pm", 4.3,2.0,"sucessful"),
-  createData('Jeremiah Ade',"x345", "VIP","26/02/2001 12:00pm", 3.9,2.0,"sucessful"),
+  createData('Jeremiah Ade',"x340","VIP","26/02/2001 12:00pm", "25/12/2022 2:00PM","sucessful"),
+  createData('Jeremiah Ade',"x340","VIP","26/02/2001 12:00pm", "25/12/2022 2:00PM","sucessful"),
+  createData('Jeremiah Ade',"x340","VIP","26/02/2001 12:00pm", "25/12/2022 2:00PM","sucessful"),
+  createData('Jeremiah Ade',"x340","VIP","26/02/2001 12:00pm", "25/12/2022 2:00PM","sucessful"),
+  createData('Jeremiah Ade',"x340","VIP","26/02/2001 12:00pm", "25/12/2022 2:00PM","sucessful"),
+  createData('Jeremiah Ade',"x340","VIP","26/02/2001 12:00pm", "25/12/2022 2:00PM","sucessful"),
+  createData('Jeremiah Ade',"x340","VIP","26/02/2001 12:00pm", "25/12/2022 2:00PM","sucessful"),
 ];
 
 export default function TransactionTable() {

@@ -1,8 +1,12 @@
-import { TextField } from '@mui/material'
+import { CircularProgress, TextField } from '@mui/material'
 import React, { useState } from 'react'
 import AvcModal from '../components/AvcModal'
 import AzanyModal from '../components/AzanyModal'
 import Navbar from '../components/Navbar'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import axios from 'axios'
+import { Link, useNavigate } from 'react-router-dom'
 const Login = () => {
     const [business, setBusiness] = useState(false)
     const [customer, setCustomer] = useState(true)
@@ -10,6 +14,14 @@ const Login = () => {
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
     const [opened, setOpened] = React.useState(false);
+    const [state, setState] = useState({
+        email: "",
+        password: ""
+    })
+
+    const handleChange = (e) => {
+        setState((prev) => ({ ...prev, [e.target.name]: e.target.value }))
+    }
     const handleOpened = () => setOpened(true);
     const handleClosed = () => setOpened(false);
     const handleCustomer = () => {
@@ -19,6 +31,27 @@ const Login = () => {
     const handleBusiness = () => {
         setBusiness(true)
         setCustomer(false)
+    }
+    const [loading, setLoading] = useState(false)
+    const navigate = useNavigate()
+    const handleSubmit = async (e) => {
+        e.preventDefault()
+        setLoading(true)
+        e.preventDefault()
+        try {
+            const res = await axios.post(`https://azanypartners.urbantour.org/api/business/auth/login`, state)
+            console.log(res.data.data.message)
+            setLoading(false)
+            navigate("/businessVerification")
+            window.localStorage.setItem("token", JSON.stringify(res.data.token))
+        } catch (error) {
+            setLoading(false)
+            toast.error(error.response.data.message)
+            console.log(error.response)
+
+
+        }
+        console.log(state)
     }
     return (
         <>
@@ -40,31 +73,58 @@ const Login = () => {
                     </div>
                 ) : (
                     <div className='space-y-3 py-6 h-[40vh] w-[25%]'>
-                        <form className='space-y-3 flex justify-center flex-col w-full'>
+                        <form onSubmit={handleSubmit} className='space-y-3 flex justify-center flex-col w-full'>
                             <TextField
                                 id="outlined-password-input"
                                 label="Email"
                                 type="azany@gmail.com"
                                 autoComplete="current-password"
                                 className='w-full'
+                                name='email'
+                                onChange={handleChange}
+                                required
                             />
                             <TextField
                                 id="outlined-password-input"
                                 label="Password"
                                 type="password"
                                 autoComplete="current-password"
+                                name='password'
+                                onChange={handleChange}
+                                required
                             />
 
                             <div className='flex justify-between items-center'>
                                 <p className='text-[10px] text-gray-300 cursor-pointer'>Remember me</p>
-                                <p className='text-[10px] text-gray-300 cursor-pointer'>Forgot Password?</p>
+                                <Link to="/forgotpassword">
+                                    <p className='text-[10px] text-gray-300 cursor-pointer'>Forgot Password?</p>
+                                </Link>
+
                             </div>
-                            <button className='bg-[#1B7CFC] py-4 rounded-md text-white'>Login</button>
+                            <button type='submit' disabled={loading ? true : false} className='text-white bg-[#1B7CfC] w-full rounded-md  py-2 px-4'>
+                                {loading ? (
+                                    'Loading.....'
+                                ) : (
+                                    <p>Login</p>
+                                )}
+                            </button>
                             <p className='text-[9px] text-center'>Don’t have an account? <span className='text-blue-400 cursor-pointer'>Sign Up</span> </p>
                         </form>
                     </div>
                 )}
             </div>
+            <ToastContainer
+                position="top-right"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="light"
+            />
             <AzanyModal open={open} handleOpen={handleOpen} handleClose={handleClose} setOpen={setOpen} />
             <AvcModal opened={opened} handleOpened={handleOpened} handleClosed={handleClosed} setOpened={setOpened} />
         </>
