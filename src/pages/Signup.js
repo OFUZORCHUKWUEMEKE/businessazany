@@ -25,13 +25,13 @@ const SignUp = () => {
     const [loading, setLoading] = useState(false)
     const navigate = useNavigate()
     // const { setCode, setUserId,setEmail } = useContext(AuthContext)
-    const { dispatch } = useContext(AuthContext)
+    const { dispatch,state:user } = useContext(AuthContext)
 
     const handleChange = (e) => {
         setState((prev) => ({ ...prev, [e.target.name]: e.target.value }))
 
     }
-
+    console.log(user)
 
     const handleSubmit = async (e) => {
         e.preventDefault()
@@ -42,7 +42,7 @@ const SignUp = () => {
             // setUserId(res.data.data.user.id)
             // setEmail(state.email)
             console.log(res.data.data.user.id)
-            dispatch({ type: "REGISTER", payload: { user_id: res.data.data.user.id, email: state.email, signup: true } })
+            dispatch({ type: "REGISTER", payload: { user_id: res?.data?.data?.user?.id, email: state.email, signup: true } })
             setLoading(false)
             console.log('successfull')
             navigate('/emailVerification')
@@ -59,7 +59,7 @@ const SignUp = () => {
         } catch (error) {
             console.log(error.response)
             setLoading(false)
-            toast.error('An Error Occured', {
+            toast.error(error.response.data.data.errors[0], {
                 position: "top-right",
                 autoClose: 5000,
                 hideProgressBar: false,

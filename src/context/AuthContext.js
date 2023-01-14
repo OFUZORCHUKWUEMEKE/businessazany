@@ -9,6 +9,7 @@ const INITIAL_STATE ={
     email:"",
     code:"",
     signup:'',
+    user_id:'',
     user:{}
 }
 

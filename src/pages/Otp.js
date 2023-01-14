@@ -10,12 +10,13 @@ import { CircularProgress } from '@mui/material';
 const EmailVerification = () => {
     const [value, setValue] = useState()
     const [loading, setLoading] = useState(false)
-    const { setCode, setUserId, code, user_id ,email} = useContext(AuthContext)
+    const { state: { user_id, email, signup } }  = useContext(AuthContext)
     const navigate = useNavigate()
     const handleChange = (value) => {
         console.log(value)
         setValue(value)
     }
+    console.log(user_id)
 
     const handleSubmit = async (e) => {
         setLoading(true)

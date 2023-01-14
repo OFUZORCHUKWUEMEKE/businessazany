@@ -27,10 +27,7 @@ const UserProvider = ({ children }) => {
             console.log(error)
         }
     }
-
-    // useEffect(() => {
-    //     fetchUser()
-    // }, [])
+    
     return (
         <UserContext.Provider>
             {children}

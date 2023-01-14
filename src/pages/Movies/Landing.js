@@ -1,9 +1,12 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import Navbar from '../../components/Navbar'
 import Profile from '../../components/Profile'
 
 const Event = () => {
+    const state = useSelector((state)=>state.user)
+    console.log(state)
     return (
          <div className='bg-[#fafbfdd7]'>
             <Navbar />

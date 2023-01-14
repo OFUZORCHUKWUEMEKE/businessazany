@@ -7,6 +7,8 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios'
 import { Link, useNavigate } from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux'
+import { USER } from '../redux/AuthSlice'
 const Login = () => {
     const [business, setBusiness] = useState(false)
     const [customer, setCustomer] = useState(true)
@@ -32,17 +34,28 @@ const Login = () => {
         setBusiness(true)
         setCustomer(false)
     }
+    const dispatch = useDispatch()
+    const {user} = useSelector((state)=>state.user)
     const [loading, setLoading] = useState(false)
     const navigate = useNavigate()
     const handleSubmit = async (e) => {
         e.preventDefault()
         setLoading(true)
         e.preventDefault()
+        const headers={
+
+        }
         try {
             const res = await axios.post(`https://azanypartners.urbantour.org/api/business/auth/login`, state)
+            const response = await axios.get(`https://azanypartners.urbantour.org/api/business/auth/fetch_profile_info`,{headers:{
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${res?.data?.token}`
+            }})
+            console.log(response.data.data.values)
+            dispatch(USER(response?.data?.data?.values))
             console.log(res.data.data.message)
             setLoading(false)
-            navigate("/businessVerification")
+            navigate("/transport/ticketLanding")
             window.localStorage.setItem("token", JSON.stringify(res.data.token))
         } catch (error) {
             setLoading(false)
@@ -51,8 +64,9 @@ const Login = () => {
 
 
         }
-        console.log(state)
+        // console.log(state)
     }
+    console.log(user)
     return (
         <>
             <Navbar />

@@ -5,6 +5,8 @@ import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { useDispatch } from 'react-redux';
+import { LOGOUT } from '../redux/AuthSlice';
 
 const style = {
     position: 'absolute',
@@ -20,6 +22,7 @@ const style = {
 
 const SignOutModal = ({ open, setOpen, handleClose, handleOpen }) => {
     const navigate = useNavigate()
+    const dispatch = useDispatch()
     const LogOut = async () => {
         const token = JSON.parse(localStorage.getItem('token'))
         console.log(token)
@@ -28,12 +31,13 @@ const SignOutModal = ({ open, setOpen, handleClose, handleOpen }) => {
             'Authorization': `${token}`
         }
         try {
-            // const response = await axios.post(`https://azany-affiliate.urbantour.org/public/api/auth/logout`, {}, { headers: headers })
+            // const response = await axios.post(`https://azany-affiliate.urbantour.org/public/api/auth/logout`, { headers: headers })
             // console.log(response.data)
             localStorage.removeItem('token')
+            dispatch(LOGOUT())
             navigate('/')
         } catch (error) {
-            console.log(error)
+            console.log(error.response)
         }
 
 

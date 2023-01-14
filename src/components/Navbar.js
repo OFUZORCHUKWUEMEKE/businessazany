@@ -1,10 +1,13 @@
+import { Avatar } from '@mui/material';
 import React from 'react';
+import { useSelector } from 'react-redux';
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
 
 
     const token = JSON.parse(localStorage.getItem('token'))
+    const { user } = useSelector((state) => state.user)
     return (
         <div className='sticky top-0 bg-white z-30'>
             <div className="md:flex justify-around items-center h-[13vh] m-auto w-[85%]">
@@ -46,7 +49,10 @@ const Navbar = () => {
                             <p className="hover:hover px-3 py-2">Login</p>
                         </Link> */}
                         <Link to="/profile">
-                            <p className="text-red-500 border border-red-500 rounded px-2 py-2">Username</p>
+                            <div className='flex items-center space-x-2'>
+                                <Avatar alt={user[0]?.profile[0]?.first_name} />
+                                <p className="rounded px-2 py-2 text-sm">{user[0]?.profile[0]?.first_name}</p>
+                            </div>
                         </Link>
                     </div>
                 ) : (
@@ -59,7 +65,6 @@ const Navbar = () => {
                         </Link>
                     </div>
                 )}
-
                 {/* <div className="gap-5 md:flex hidden">
                     <Link to="/login">
                         <p className="hover:hover px-3 py-2">Login</p>

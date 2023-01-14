@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useRef, useState } from 'react';
 import Navbar from '../components/Navbar';
 import TextField from '@mui/material/TextField';
 import Checkbox from '@mui/material/Checkbox';
-import { Link, Navigate } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -13,6 +13,7 @@ import InputLabel from '@mui/material/InputLabel';
 import FileUploadIcon from '@mui/icons-material/FileUpload';
 import { IconButton } from '@mui/material';
 import { AuthContext } from '../context/AuthContext';
+import { useSelector } from 'react-redux';
 const BusinessVerification = () => {
     const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
     const [loading, setLoading] = useState(false)
@@ -28,6 +29,8 @@ const BusinessVerification = () => {
     const [document, setDocument] = useState('')
     const [logo, setLogo] = useState('')
     // const [city,setCity] = useState("")
+
+    const navigate = useNavigate()
 
 
     const [listedService, setListedService] = useState()
@@ -58,8 +61,8 @@ const BusinessVerification = () => {
     console.log(state)  
 
 
-
-
+    const {user} = useSelector((state)=>state.user)
+    console.log(user[0].profile[0].first_name)
     const handleSubmit = async (e) => {
         e.preventDefault()
 
@@ -99,6 +102,7 @@ const BusinessVerification = () => {
 
             setLoading(false)
             console.log(formData)
+            navigate('/transport/ticketLanding')
         } catch (error) {
             toast.error(error.response.data.data.errors[0])
             setLoading(false)

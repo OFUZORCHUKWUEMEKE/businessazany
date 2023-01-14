@@ -6,17 +6,27 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import AuthProvider from './context/AuthContext';
 import UserProvider from './context/UserContext';
+import { Provider } from 'react-redux';
+import { store } from './redux/store';
+import { persistStore } from 'redux-persist';
+import { PersistGate } from 'redux-persist/integration/react';
+
+let persistor = persistStore(store);
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   // <React.StrictMode>
   <BrowserRouter>
+    <Provider store={store}>
+      <PersistGate  persistor={persistor}>
+        <AuthProvider>
+          <UserProvider>
+            <App />
+          </UserProvider>
+        </AuthProvider>
+      </PersistGate>
 
-    <AuthProvider>
-      <UserProvider>
-        <App />
-      </UserProvider>
+    </Provider>
 
-    </AuthProvider>
   </BrowserRouter>
   // </React.StrictMode>
 );

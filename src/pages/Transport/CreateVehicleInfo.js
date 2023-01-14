@@ -6,17 +6,20 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
+import { useSelector } from 'react-redux';
 
 const CreateVehicleInfo = () => {
     const [departure, setDeparture] = useState(10);
     const [destination, setDestination] = useState(20);
 
-    const handleDepature = (event: SelectChangeEvent) => {
+    const handleDepature = (event) => {
         setDeparture(event.target.value)
     };
-    const handleDestination = (event: SelectChangeEvent) => {
+    const handleDestination = (event) => {
         setDestination(event.target.value)
     };
+    const {user,transport} = useSelector((state)=>state.user)
+    console.log(transport)
     return (
         <>
             <Navbar />
