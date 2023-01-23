@@ -77,7 +77,7 @@ const ForgotPassword = () => {
                                         <CircularProgress className='text-green-500' />
                                     </div>
                                 ) : (
-                                    <p>Login</p>
+                                    <p>Confirm</p>
                                 )}
                             </button>
                             <p className='text-[9px] text-center'>Don’t have an account? <span className='text-blue-400 cursor-pointer'>Sign Up</span> </p>

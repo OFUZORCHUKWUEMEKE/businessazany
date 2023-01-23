@@ -14,6 +14,7 @@ import { useDispatch } from 'react-redux';
 import { SET_ROUTE, SET_ROUTE_ID, SET_TRANSPORT } from '../../redux/AuthSlice';
 
 
+
 const CreateRoute = () => {
     // const [departure, setDeparture] = useState(10);
     // const [destination, setDestination] = useState(20);
@@ -50,12 +51,26 @@ const CreateRoute = () => {
             console.log(response?.data?.data?.values.id)
             // dispatch(SET_ROUTE_ID(response?.data?.data?.values.id))
             dispatch(SET_TRANSPORT({ departure: state.departure, destination: state.destination, route_id: response?.data?.data?.values.id }))
+            toast.success('Route Created', {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+            });
             setTimeout(() => {
                 navigate('/transport/createVehicleInfo')
             }, 1000)
         } catch (error) {
-            console.log(error)
+            let i=0
+            for (i; i <= error.response.data.data.errors.length; i++) {
+                toast.error(error.response.data.data.errors[i])
+            }
             setLoading(false)
+            console.log(error.response.data.data)
         }
 
     }

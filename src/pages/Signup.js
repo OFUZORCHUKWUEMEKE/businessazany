@@ -7,12 +7,19 @@ import { Input } from "@material-tailwind/react";
 import { AiOutlineEyeInvisible } from "react-icons/ai";
 import InputAdornment from "@mui/material/InputAdornment";
 import IconButton from '@mui/material/IconButton';
+// import InputAdornment from '@mui/material/InputAdornment';
+import FormHelperText from '@mui/material/FormHelperText';
+import FormControl from '@mui/material/FormControl';
+// import TextField from '@mui/material/TextField';
+import Visibility from '@mui/icons-material/Visibility';
+import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../context/AuthContext';
 import '../styles/main.css'
+import { InputLabel, OutlinedInput } from '@mui/material';
 const SignUp = () => {
     const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
     const [state, setState] = useState({
@@ -22,10 +29,17 @@ const SignUp = () => {
         password: '',
         password_confirmation: ""
     })
+    const [showPassword, setShowPassword] = React.useState(false);
+
+    const handleClickShowPassword = () => setShowPassword((show) => !show);
+
+    const handleMouseDownPassword = (event) => {
+        event.preventDefault();
+    };
     const [loading, setLoading] = useState(false)
     const navigate = useNavigate()
     // const { setCode, setUserId,setEmail } = useContext(AuthContext)
-    const { dispatch,state:user } = useContext(AuthContext)
+    const { dispatch, state: user } = useContext(AuthContext)
 
     const handleChange = (e) => {
         setState((prev) => ({ ...prev, [e.target.name]: e.target.value }))
@@ -92,12 +106,71 @@ const SignUp = () => {
                             <div>
                                 <TextField label="Email address" name='email' onChange={handleChange} id="outlined-size-normal" className='w-[100%] bg-gray-100' />
                             </div>
-                            <div className=''>
-                                <TextField label="Enter Password" name='password' type="password" onChange={handleChange} id="outlined-size-normal" className='w-[100%] bg-gray-100' />
+                            {/* <div className=''>
+                                <TextField label="Enter Password" endAdornment={
+                                    <InputAdornment position="end">
+                                        <IconButton
+                                            aria-label="toggle password visibility"
+                                            onClick={handleClickShowPassword}
+                                            onMouseDown={handleMouseDownPassword}
+                                            edge="end"
+                                        >
+                                            {showPassword ? <VisibilityOff /> : <Visibility />}
+                                        </IconButton>
+                                    </InputAdornment>
+                                } name='password' type="password" onChange={handleChange} id="outlined-size-normal" className='w-[100%] bg-gray-100' />
+                            </div> */}
+                            <div>
+                                <FormControl variant="outlined" className='w-full'>
+                                    <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel>
+                                    <OutlinedInput
+                                        id="outlined-adornment-password"
+                                        type={showPassword ? 'text' : 'password'}
+                                        endAdornment={
+                                            <InputAdornment position="end">
+                                                <IconButton
+                                                    aria-label="toggle password visibility"
+                                                    onClick={handleClickShowPassword}
+                                                    onMouseDown={handleMouseDownPassword}
+                                                    edge="end"
+                                                >
+                                                    {showPassword ? <VisibilityOff /> : <Visibility />}
+                                                </IconButton>
+                                            </InputAdornment>
+                                        }
+                                        label="Password"
+                                        className='w-[100%] bg-gray-100'
+                                        onChange={handleChange} name="password"
+                                    />
+                                </FormControl>
                             </div>
                             <div>
-                                <TextField label="Confirm Password" name='password_confirmation' type="password" onChange={handleChange} id="outlined-size-normal" className='w-[100%] bg-gray-100' />
+                                <FormControl variant="outlined" className='w-full'>
+                                    <InputLabel htmlFor="outlined-adornment-password">Confirm Password</InputLabel>
+                                    <OutlinedInput
+                                        id="outlined-adornment-password"
+                                        type={showPassword ? 'text' : 'password'}
+                                        endAdornment={
+                                            <InputAdornment position="end">
+                                                <IconButton
+                                                    aria-label="toggle password visibility"
+                                                    onClick={handleClickShowPassword}
+                                                    onMouseDown={handleMouseDownPassword}
+                                                    edge="end"
+                                                >
+                                                    {showPassword ? <VisibilityOff /> : <Visibility />}
+                                                </IconButton>
+                                            </InputAdornment>
+                                        }
+                                        label="Password"
+                                        className='w-[100%] bg-gray-100'
+                                        name='password_confirmation' onChange={handleChange} 
+                                    />
+                                </FormControl>
                             </div>
+                            {/* <div>
+                                <TextField label="Confirm Password" name='password_confirmation' type="password" onChange={handleChange} id="outlined-size-normal" className='w-[100%] bg-gray-100' />
+                            </div> */}
                             <div className="flex items-center text-sm ">
                                 <Checkbox {...label} />
                                 <p className="">By clicking ‘sign up’ I agree to <span className='font-semibold text-[#1B7CFC]'>Terms & Conditions</span></p>

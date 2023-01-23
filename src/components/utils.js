@@ -1,14 +1,15 @@
 import axios from "axios";
 import jwt_decode from "jwt-decode";
 import { useNavigate } from "react-router-dom";
-const axiosJwt = axios.create()
+const Protected = axios.create()
 
 
-axiosJwt.interceptors.request.use(
+Protected.interceptors.request.use(
     config => {
         let currentDate = new Date();
 
         const token = JSON.parse(localStorage.getItem('token'))
+        console.log(token)
         const decodedToken = jwt_decode(token);
         console.log(decodedToken)
         if (decodedToken.exp * 1000 < currentDate.getTime()) {
@@ -23,4 +24,4 @@ axiosJwt.interceptors.request.use(
         return Promise.reject(error);
     }
 )
-export default axiosJwt
+export default Protected

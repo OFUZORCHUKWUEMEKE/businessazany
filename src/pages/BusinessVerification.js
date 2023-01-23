@@ -14,6 +14,7 @@ import FileUploadIcon from '@mui/icons-material/FileUpload';
 import { IconButton } from '@mui/material';
 import { AuthContext } from '../context/AuthContext';
 import { useSelector } from 'react-redux';
+import { USER } from '../redux/AuthSlice';
 const BusinessVerification = () => {
     const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
     const [loading, setLoading] = useState(false)
@@ -37,10 +38,10 @@ const BusinessVerification = () => {
 
     const token = JSON.parse(localStorage.getItem('token'))
 
-    const {dispatch,state} = useContext(AuthContext)
+    const { dispatch, state } = useContext(AuthContext)
     const inputRef = useRef()
 
-    console.log(token)
+    // console.log(token)
 
     const handleImage = () => {
         inputRef.current.click()
@@ -58,11 +59,11 @@ const BusinessVerification = () => {
         fetchServices()
 
     }, [])
-    console.log(state)  
+    console.log(state)
 
 
-    const {user} = useSelector((state)=>state.user)
-    console.log(user[0].profile[0].first_name)
+    const { user } = useSelector((state) => state.user)
+    // console.log(user[0].profile[0].first_name)
     const handleSubmit = async (e) => {
         e.preventDefault()
 
@@ -80,14 +81,27 @@ const BusinessVerification = () => {
             formData.append('country', country)
             formData.append('zip_code', zip_code)
             formData.append('city', city)
-            formData.append('service', service)
+            formData.append('service', service.name)
             formData.append('registration_number', registration_number)
             formData.append('document', document)
             formData.append('logo', logo)
+
             const response = await axios.post(`https://azanypartners.urbantour.org/api/business/auth/create_business_details`, formData, { headers })
-            console.log(response.data.data.values)
-            dispatch({type:'VERIFY',payload:response.data.data.values})
-            window.localStorage.setItem('user',response.data.data.value)
+
+
+
+            const res = await axios.get(`https://azanypartners.urbantour.org/api/business/auth/fetch_profile_info`, {headers})
+            console.log(res.data)
+           
+
+            // dispatch(USER(res?.data?.data?.values))
+
+            setLoading(false)
+
+           
+
+            console.log(res?.data?.data?.values[0].busisness_details[0].service_type
+            )
 
             toast.success('Successful', {
                 position: "top-right",
@@ -99,19 +113,63 @@ const BusinessVerification = () => {
                 progress: undefined,
                 theme: "light",
             });
+            
+            switch (res?.data?.data?.values[0].busisness_details[0].service_type) {
+                case 'Aviation':
+                      navigate("/aviation/ticketLanding")
+                    return;
+                  
+                case 'Transportation':
+                   navigate('/transport/ticketLanding')
+                    return;
+                case 'Movie':
+                    navigate("/movie/landing") 
+                    return;
+                default:
+                    return;
+            }
+
+            // const res = await axios.get(`https://azanypartners.urbantour.org/api/business/auth/fetch_profile_info`, {
+            //     headers 
+            // })
+            // console.log(res.data.data.values)
+            // dispatch(USER(res?.data?.data?.values))  
+            // console.log(res.data.data.message)
+
+            // data
+            // console.log({business_name,service:service.name,registration_number,country,zip_code,address})
+
+
+
+            // navigate
+            // conditionally render pages based on the services gotten
+            // switch(response.data.data.values[0].busisness_details[0]){
+
+            // }
+
+
+
+            // dispatch({type:'VERIFY',payload:response.data.data.values})
+            // window.localStorage.setItem('user',response.data.data.value)
+
+
 
             setLoading(false)
             console.log(formData)
-            navigate('/transport/ticketLanding')
+            // navigate('/transport/ticketLanding')
         } catch (error) {
-            toast.error(error.response.data.data.errors[0])
+            let i=0
+            for (i; i <= error.response.data.data.errors.length; i++) {
+                toast.error(error.response.data.data.errors[i])
+            }
             setLoading(false)
-            console.log(error.response)
+            console.log(error.response.data.data)
             // console.log(formData)
         }
 
     }
-  
+    console.log(service.name)
+
     return (
         <div className='overflow-x-hidden'>
             <Navbar />
@@ -155,10 +213,13 @@ const BusinessVerification = () => {
                                         id="demo-simple-select"
                                         value={service}
                                         label="Age"
-                                        onChange={(e) => setService(e.target.value)}
+                                        onChange={(e) => {
+                                            console.log(e.target.value)
+                                            setService(e.target.value)
+                                        }}
                                     >
                                         {listedService.map((list, index) => (
-                                            <MenuItem value={index}>{list.name}</MenuItem>
+                                            <MenuItem value={list}>{list.name}</MenuItem>
                                         ))}
 
 

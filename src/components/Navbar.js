@@ -8,6 +8,7 @@ const Navbar = () => {
 
     const token = JSON.parse(localStorage.getItem('token'))
     const { user } = useSelector((state) => state.user)
+    console.log(user)
     return (
         <div className='sticky top-0 bg-white z-30'>
             <div className="md:flex justify-around items-center h-[13vh] m-auto w-[85%]">
@@ -43,7 +44,7 @@ const Navbar = () => {
                     </div>
                 </div>
 
-                {token ? (
+                {token && user ? (
                     <div className="gap-5 md:flex hidden">
                         {/* <Link to="/login">
                             <p className="hover:hover px-3 py-2">Login</p>

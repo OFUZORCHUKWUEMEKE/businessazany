@@ -6,15 +6,17 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
-
+import { SET_TRAVEL } from '../../redux/AuthSlice';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const CreateVehicleTicket = () => {
     const [departure, setDeparture] = useState(10);
     const [destination, setDestination] = useState(20);
 
-    const handleDepature = (event: SelectChangeEvent) => {
+    const handleDepature = (event) => {
         setDeparture(event.target.value)
     };
-    const handleDestination = (event: SelectChangeEvent) => {
+    const handleDestination = (event) => {
         setDestination(event.target.value)
     };
     return (

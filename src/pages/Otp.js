@@ -7,11 +7,14 @@ import { AuthContext } from '../context/AuthContext';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { CircularProgress } from '@mui/material';
+import { USER } from '../redux/AuthSlice';
+import { useDispatch } from 'react-redux';
 const EmailVerification = () => {
     const [value, setValue] = useState()
     const [loading, setLoading] = useState(false)
     const { state: { user_id, email, signup } }  = useContext(AuthContext)
     const navigate = useNavigate()
+    const dispatch = useDispatch()
     const handleChange = (value) => {
         console.log(value)
         setValue(value)
@@ -25,6 +28,18 @@ const EmailVerification = () => {
         try {
             const response = await axios.post(`https://azanypartners.urbantour.org/api/business/auth/verify_email_code`, { user_id, code: parseInt(value) })
             console.log(response.data)
+
+            const res = await axios.get(`https://azanypartners.urbantour.org/api/business/auth/fetch_profile_info`, {
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${response.data.token}`
+                }
+            })
+            console.log(response.data)
+            // window.localStorage.setItem("token", JSON.stringify(res.data.token))
+
+            dispatch(USER(res?.data?.data?.values))
+            window.localStorage.setItem("token", JSON.stringify(response.data.token))
             toast('Successful', {
                 position: "top-right",
                 autoClose: 5000,
@@ -36,7 +51,7 @@ const EmailVerification = () => {
             });
             setTimeout(() => {
                 navigate('/businessVerification')
-            }, 1500)
+            }, 2500)
 
             // setLoading(false)
         } catch (error) {
@@ -64,7 +79,7 @@ const EmailVerification = () => {
                     <div className=" text-sm py-14 md:w-[30%]">
                         <div className=" text-center space-y-3">
                             <h1 className="font-bold text-3xl">Email Verification</h1>
-                            <p className="text-md">Provide the OTP sent to {email}</p>
+                            <p className="text-md">Provide the OTP sent to Your Mail</p>
                         </div>
                         <form onSubmit={handleSubmit}>
                             <div className='py-4'>

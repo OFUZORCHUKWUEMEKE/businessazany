@@ -2,8 +2,11 @@ import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
   user: {},
-  transport:{
-  
+  transport: {
+
+  },
+  aviation: {
+
   }
 }
 
@@ -11,19 +14,28 @@ export const userSlice = createSlice({
   name: 'user',
   initialState,
   reducers: {
-    USER: (state,action) => {
+    USER: (state, action) => {
       // Redux Toolkit allows us to write "mutating" logic in reducers. It
       // doesn't actually mutate the state because it uses the Immer library,
       // which detects changes to a "draft state" and produces a brand new
       // immutable state based off those changes
       state.user = action.payload
     },
-    LOGOUT:(state)=>{
+    LOGOUT: (state) => {
       state.user = null
     },
-    SET_TRANSPORT:(state,action)=>{
-       state.transport=action.payload
+    SET_TRANSPORT: (state, action) => {
+      state.transport = action.payload
     },
+    SET_TRAVEL: (state, action) => {
+      state.transport = { ...state.transport, travel_id: action.payload }
+    },
+    SET_AVIATION: (state, action) => {
+      state.aviation = action.payload;
+    },
+    SET_FLIGHT:(state,action)=>{
+      state.aviation ={...state.aviation,flight_id:action.payload}
+    }
     // SET_VEHICLE:(state,action)=>{
     //   state.transport.vehicle_id = action.payload
     // },
@@ -44,6 +56,6 @@ export const userSlice = createSlice({
 })
 
 // Action creators are generated for each case reducer function
-export const { USER ,LOGOUT,SET_TRANSPORT} = userSlice.actions
+export const { USER, LOGOUT, SET_TRANSPORT, SET_TRAVEL, SET_AVIATION,SET_FLIGHT } = userSlice.actions
 
 export default userSlice.reducer

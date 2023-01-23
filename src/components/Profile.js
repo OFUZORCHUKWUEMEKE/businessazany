@@ -5,7 +5,7 @@ const Profile = ({ service }) => {
     return (
         <div>
             <div className="bg-white p-5 flex flex-col justify-center h-[52vh] ">
-                <img src={service?.logo_url} alt="" className="rounded-full m-auto md:w-[150px object-cover " />
+                <img src="/images/silvia.png" alt="" className="rounded-full m-auto md:w-[150px object-cover " />
                 <div className="space-y-3">
                     <h1 className="font-bold text-center">{service?.name}</h1>
                     <button className='bg-[#1B7CFC] py-3 rounded-md text-white w-[100%]'>Wallet</button>
@@ -16,7 +16,8 @@ const Profile = ({ service }) => {
                             <p className="">From</p>
                         </div>
                         <div className="">
-                            <p className="">{service?.country}</p>
+                            {/* <p className="">{service?.country}</p> */}
+                            <p className="">Nigeria</p>
                         </div>
                     </div>
                 </div>

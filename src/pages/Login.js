@@ -1,4 +1,4 @@
-import { CircularProgress, TextField } from '@mui/material'
+import { CircularProgress, FormControl, InputLabel, OutlinedInput, TextField } from '@mui/material'
 import React, { useState } from 'react'
 import AvcModal from '../components/AvcModal'
 import AzanyModal from '../components/AzanyModal'
@@ -9,6 +9,10 @@ import axios from 'axios'
 import { Link, useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { USER } from '../redux/AuthSlice'
+import InputAdornment from "@mui/material/InputAdornment";
+import IconButton from '@mui/material/IconButton';
+import Visibility from '@mui/icons-material/Visibility';
+import VisibilityOff from '@mui/icons-material/VisibilityOff';
 const Login = () => {
     const [business, setBusiness] = useState(false)
     const [customer, setCustomer] = useState(true)
@@ -35,28 +39,63 @@ const Login = () => {
         setCustomer(false)
     }
     const dispatch = useDispatch()
-    const {user} = useSelector((state)=>state.user)
+    const { user } = useSelector((state) => state.user)
     const [loading, setLoading] = useState(false)
     const navigate = useNavigate()
+
+    const [showPassword, setShowPassword] = React.useState(false);
+
+    const handleClickShowPassword = () => setShowPassword((show) => !show);
+
+    const handleMouseDownPassword = (event) => {
+        event.preventDefault();
+    };
+
     const handleSubmit = async (e) => {
         e.preventDefault()
         setLoading(true)
         e.preventDefault()
-        const headers={
+        const headers = {
 
         }
         try {
             const res = await axios.post(`https://azanypartners.urbantour.org/api/business/auth/login`, state)
-            const response = await axios.get(`https://azanypartners.urbantour.org/api/business/auth/fetch_profile_info`,{headers:{
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${res?.data?.token}`
-            }})
-            console.log(response.data.data.values)
-            dispatch(USER(response?.data?.data?.values))
-            console.log(res.data.data.message)
-            setLoading(false)
-            navigate("/transport/ticketLanding")
+            const response = await axios.get(`https://azanypartners.urbantour.org/api/business/auth/fetch_profile_info`, {
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${res?.data?.token}`
+                }
+            })
+            console.log(response.data)
             window.localStorage.setItem("token", JSON.stringify(res.data.token))
+
+            dispatch(USER(response?.data?.data?.values))
+
+            setLoading(false)
+
+            if (response.data.data.values[0].busisness_details.length === 0) {
+                navigate('/businessVerification')
+                return;
+            }
+
+            console.log(response?.data?.data?.values[0].busisness_details[0].service_type
+            )
+
+            switch (response?.data?.data?.values[0].busisness_details[0].service_type) {
+                case 'Aviation':
+                    navigate("/aviation/ticketLanding")
+                    return;
+
+                case 'Transportation':
+                    navigate('/transport/ticketLanding')
+                    return;
+                case 'Movie':
+                    navigate("/movie/landing")
+                    return;
+                default:
+                    return;
+            }
+
         } catch (error) {
             setLoading(false)
             toast.error(error.response.data.message)
@@ -98,15 +137,28 @@ const Login = () => {
                                 onChange={handleChange}
                                 required
                             />
-                            <TextField
-                                id="outlined-password-input"
-                                label="Password"
-                                type="password"
-                                autoComplete="current-password"
-                                name='password'
-                                onChange={handleChange}
-                                required
-                            />
+                            <FormControl variant="outlined" className='w-full'>
+                                <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel>
+                                <OutlinedInput
+                                    id="outlined-adornment-password"
+                                    type={showPassword ? 'text' : 'password'}
+                                    endAdornment={
+                                        <InputAdornment position="end">
+                                            <IconButton
+                                                aria-label="toggle password visibility"
+                                                onClick={handleClickShowPassword}
+                                                onMouseDown={handleMouseDownPassword}
+                                                edge="end"
+                                            >
+                                                {showPassword ? <VisibilityOff /> : <Visibility />}
+                                            </IconButton>
+                                        </InputAdornment>
+                                    }
+                                    label="Password"
+                                    className='w-[100%] bg-gray-100'
+                                    name='password' onChange={handleChange}
+                                />
+                            </FormControl>
 
                             <div className='flex justify-between items-center'>
                                 <p className='text-[10px] text-gray-300 cursor-pointer'>Remember me</p>
