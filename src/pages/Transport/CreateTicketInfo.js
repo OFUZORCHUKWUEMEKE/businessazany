@@ -121,7 +121,7 @@ const CreateTicketInfo = () => {
                                     <TextField label="Reward Point" name='reward_point_amount' onChange={handleChange} id="outlined-size-normal" className='w-[100%] bg-gray-100 text-sm' />
                                 </div>
                                 <div className='py-1'>
-                                    <TextField label="Route" name='route' value={`${transport.departure} - ${transport.destination}`} id="outlined-size-normal" className='w-[100%] bg-gray-100 text-sm' />
+                                    <TextField label="Route" name='route' value={`${transport?.departure} - ${transport?.destination}`} id="outlined-size-normal" className='w-[100%] bg-gray-100 text-sm' />
                                 </div>
 
                                 {/* <div className='py-1'>

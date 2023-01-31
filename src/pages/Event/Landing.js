@@ -7,7 +7,7 @@ import Profile from '../../components/Profile';
 const   Landing = () => {
     const {user} = useSelector((state)=>state.user)
     const [service,setService] = useState(user[0].busisness_details[0])
-    console.log(user[0].busisness_details[0])
+    console.log(user[0]?.busisness_details[0])
   return (
        <div className='bg-[#fafbfdd7]'>
             <Navbar />
