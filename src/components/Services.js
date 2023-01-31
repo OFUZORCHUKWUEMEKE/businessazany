@@ -5,8 +5,8 @@ const Services = () => {
     return (
         <div>
             <div className="m-auto w-[85%] md:flex items-center gap-10 my-20">
-                <div className="space-y-4 md:my-0 my-5">
-                    <h1 className="font-bold text-2xl ">Lorem ipsum dolor sit amet consectetur adipisicing.</h1>
+                <div className="space-y-4 md:my-0 my-5 flex flex-col justify-center items-center">
+                    <h1 className="font-bold text-xl md:text-2xl text-center md:text-left">Lorem ipsum dolor sit amet consectetur adipisicing.</h1>
                     <p className="text-justify">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit, perferendis?</p>
                     <button className="secondary-button">Create Account</button>
                 </div>

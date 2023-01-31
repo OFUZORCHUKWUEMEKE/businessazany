@@ -3,7 +3,7 @@ import { Input } from "@material-tailwind/react";
 
 const HowItWorks = () => {
     return (
-        <div className='my-10'>
+        <div className='my-10 hidden md:block'>
             <div className="m-auto w-[85%] bg-[#fff9fd] md:flex md:space-y-0 space-y-5  px-10 py-20 items-center gap-[10%] ">
                 <div className="space-y-5">
                     <h1 className="font-bold text-2xl">Lorem ipsum dolor sit amet <br /> consectetur adipisicing elit.!</h1>

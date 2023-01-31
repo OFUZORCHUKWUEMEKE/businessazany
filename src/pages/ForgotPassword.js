@@ -52,7 +52,7 @@ const ForgotPassword = () => {
                     <div className='space-y-4 flex flex-col justify-center items-center'>
                         <h2 className='text-xl text-[#1B7CfC] font-bold main'>Forgot Passsword</h2>
                     </div>
-                    <div className='space-y-3 py-6 h-[40vh] w-[25%]'>
+                    <div className='space-y-3 py-6 h-[40vh] md:w-[25%] w-4/5 mx-auto'>
                         <form
                             className='space-y-3 flex justify-center flex-col w-full' onSubmit={handleSubmit}>
                             <TextField

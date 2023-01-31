@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Navbar from '../../components/Navbar';
 import { SlLocationPin } from "react-icons/sl"
 import { useState } from 'react';
@@ -8,6 +8,7 @@ import { IconButton, Stack } from '@mui/material';
 import EditIcon from '@mui/icons-material/Edit';
 import { TbEdit } from 'react-icons/tb';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 const SalesHistory = () => {
     const [tab, setTab] = useState(false)
 
@@ -25,6 +26,43 @@ const SalesHistory = () => {
         setOld(true)
         setAction(false)
     }
+    const fetchMovies = async () => {
+        // setLoading1(true)
+        const token = JSON.parse(localStorage.getItem('token'))
+        const headers = {
+            "Content-Type": "application/json",
+            'Authorization': `Bearer ${token}`
+        }
+        try {
+            const response = await axios.get(`https://azanypartners.urbantour.org/api/business/movie/fetch_old_movies/0/6`, { headers })
+            console.log(response.data.data.values)
+            // setRoute(response?.data?.data?.values)
+            // setLoading1(false)
+        } catch (error) {
+            // setLoading1(false)
+            console.log(error?.response)
+        }
+    }
+    // const fetchVehicle = async () => {
+    //     setLoading2(true)
+    //     const token = JSON.parse(localStorage.getItem('token'))
+    //     const headers = {
+    //         "Content-Type": "application/json",
+    //         'Authorization': `Bearer ${token}`
+    //     }
+    //     try {
+    //         const response = await axios.get(`https://azanypartners.urbantour.org/api/business/transport/list_vehicle_by_pagination/0/1`, { headers })
+    //         console.log(response.data.data.values)
+    //         setVehicle(response?.data?.data?.values)
+    //         setLoading2(false)
+    //     } catch (error) {
+    //         console.log(error?.response)
+    //         setLoading2(false)
+    //     }
+    // }
+    useEffect(()=>{
+        fetchMovies()
+    })
     return (
         <div className='bg-[#F5F5F5]'>
             <Navbar />
@@ -36,8 +74,8 @@ const SalesHistory = () => {
 
                     <div className="space-y-5 col-span-7">
                         <div className="shadow-md flex justify-around bg-white p-3 gap-20 px-20 mb-10 ">
-                            <p className={action ? `cursor-pointer text-blue-500` : 'cursor-pointer text-black'} onClick={() => handleAction()}>Action Movies</p>
-                            <p className={old ? `cursor-pointer text-blue-500` : 'cursor-pointer text-black'} onClick={() => handleOld()}>Old Movies</p>
+                            <p className={action ? `cursor-pointer text-blue-500` : 'cursor-pointer text-black'} onClick={() => handleAction()}>Movies</p>
+                            <p className={old ? `cursor-pointer text-blue-500` : 'cursor-pointer text-black'} onClick={() => handleOld()}>Ticket</p>
                         </div>
 
                         {action && <div className="md:grid grid-cols-3 items-center gap-3 ">

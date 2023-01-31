@@ -7,7 +7,8 @@ const initialState = {
   },
   aviation: {
 
-  }
+  },
+  movies:{}
 }
 
 export const userSlice = createSlice({
@@ -35,6 +36,9 @@ export const userSlice = createSlice({
     },
     SET_FLIGHT:(state,action)=>{
       state.aviation ={...state.aviation,flight_id:action.payload}
+    },
+    SET_MOVIES:(state,action)=>{
+      state.movies=action.payload
     }
     // SET_VEHICLE:(state,action)=>{
     //   state.transport.vehicle_id = action.payload
@@ -56,6 +60,6 @@ export const userSlice = createSlice({
 })
 
 // Action creators are generated for each case reducer function
-export const { USER, LOGOUT, SET_TRANSPORT, SET_TRAVEL, SET_AVIATION,SET_FLIGHT } = userSlice.actions
+export const { USER, LOGOUT, SET_TRANSPORT, SET_TRAVEL, SET_AVIATION,SET_FLIGHT,SET_MOVIES } = userSlice.actions
 
 export default userSlice.reducer

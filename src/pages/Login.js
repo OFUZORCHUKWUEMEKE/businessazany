@@ -115,9 +115,9 @@ const Login = () => {
                     <h2 className='text-xl'>Login</h2>
                     <h3>Please enter your details to continue</h3>
                 </div>
-                <div className='w-3/5 mx-auto p-4 flex justify-between space-x-3'>
-                    <button onClick={handleCustomer} className={customer ? `bg-[#1B7CFC] py-2 px-3 w-3/5 rounded-md text-white` : `bg-[#F7F8F9] text-black py-2 px-3 w-3/5 rounded-md`}>As a Customer</button>
-                    <button onClick={handleBusiness} className={business ? `bg-[#1B7CFC] text-white py-2 px-3 w-3/5 rounded-md` : `bg-[#F7F8F9] text-black py-2 px-3 w-3/5 rounded-md`}>As a Business Owner</button>
+                <div className='w-[95%] md:w-3/5 mx-auto p-4 flex justify-between space-x-3'>
+                    <button onClick={handleCustomer} className={customer ? `bg-[#1B7CFC] text-sm text-white py-2 px-1 md:px-3 w-3/5 rounded-md` : `bg-[#F7F8F9] text-sm py-2 px-1 md:px-3 w-3/5 rounded-md`}>As a Customer</button>
+                    <button onClick={handleBusiness} className={business ? `bg-[#1B7CFC] text-sm text-white py-2 px-1 md:px-3 w-3/5 rounded-md` : `bg-[#F7F8F9] text-black py-2 px-1 md:px-3 w-3/5 rounded-md`}>As a Business Owner</button>
                 </div>
                 {customer ? (
                     <div className='py-6 flex flex-col space-y-4 h-[40vh]'>
@@ -125,7 +125,7 @@ const Login = () => {
                         <button className='p-3 px-4 bg-[#DBE1E7] w-full rounded-md' onClick={() => handleOpened()}>Login with AVC</button>
                     </div>
                 ) : (
-                    <div className='space-y-3 py-6 h-[40vh] w-[25%]'>
+                    <div className='space-y-3 py-6 h-[40vh] md:w-[25%] w-[90%]'>
                         <form onSubmit={handleSubmit} className='space-y-3 flex justify-center flex-col w-full'>
                             <TextField
                                 id="outlined-password-input"

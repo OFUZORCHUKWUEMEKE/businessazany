@@ -6,6 +6,9 @@ import { IconButton } from '@mui/material';
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { useDispatch } from 'react-redux';
+import { SET_MOVIES } from '../../redux/AuthSlice';
+import { useNavigate } from 'react-router-dom';
 const CreateMovieTicket = () => {
     const [loading, setLoading] = useState(false)
     const [state, setState] = useState({
@@ -17,10 +20,11 @@ const CreateMovieTicket = () => {
         language: "",
 
     })
+    const navigate = useNavigate()
     const [cover_image, setCoverImage] = useState("")
     const inputRef = useRef()
     const token = JSON.parse(localStorage.getItem('token'))
-
+    const dispatch = useDispatch()
     const handleSubmit = async (e) => {
         e.preventDefault()
         const headers = {
@@ -41,6 +45,9 @@ const CreateMovieTicket = () => {
             console.log(response.data)
             setLoading(false)
             console.log({ title: state.title, cover_image, genre: state.genre, language: state.language, released_date: state.released_date, duratiom: state.duration })
+            navigate('/movie/ticket')
+             dispatch(SET_MOVIES({movie_id:response?.data?.data?.values.id}))
+             console.log(response?.data?.data?.values.id)
         } catch (error) {
             console.log(error.response)
             let i = 0

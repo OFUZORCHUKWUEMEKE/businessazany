@@ -5,3 +5,15 @@
 .c-primary-color{
     background-color: #1B7CfC;
 }
+
+.menu{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color:  #1B7CFC;
+    z-index: 1;
+    transform: translateY(-100%);
+    min-height: 100vh;
+    overflow: hidden;
+}

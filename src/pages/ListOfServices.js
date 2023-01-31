@@ -42,13 +42,13 @@ const ListOfServices = () => {
             <div className="m-auto w-[85%] pb-[5%]">
                 <div className="pt-8 ">
                     <div className="my-8">
-                        <h1 className="font-bold text-3xl">List of Services</h1>
+                        <h1 className="font-bold text-3xl text-center md:text-left main">List of Services</h1>
                     </div>
-                    <div className="flex gap-[15%] py-6">
+                    <div className="flex gap-[15%] justify-center md:justify-start py-6">
                         <h1 className={ticketing ? `cursor-pointer font-bold text-[#1B7CFC]` : `cursor-pointer`} onClick={() => handleTicket()}>Ticketing</h1>
                         <h1 className={billing ? `cursor-pointer text-[#1B7CFC] font-bold` : `cursor-pointer`} onClick={() => handleBilling()}>Billing</h1>
                     </div>
-                    <div className="md:flex items-center gap-10 justify-between my-3">
+                    <div className="flex flex-col-reverse md:flex-row  items-center gap-10 justify-between my-3">
                         <div className="w-[100%] example">
                             {ticketing && <div className="space-y-16 overflow-y-scroll h-[100vh] example">
                                 {ticket.map((ticketing, index) => (
@@ -57,7 +57,7 @@ const ListOfServices = () => {
                                             <img src={ticketing.image} alt="" className="rounded-l-xl" />
                                         </div>
                                         <div className="w-[250px] text-center">
-                                            <h1 className="font-bold text-[#1B7CFC] text-xl">{ticketing.name}</h1>
+                                            <h1 className="font-bold text-[#1B7CFC] text-xl main">{ticketing.name}</h1>
                                         </div>
                                     </div>
                                 ))}
@@ -66,7 +66,7 @@ const ListOfServices = () => {
                             {billing && <div className="space-y-16 overflow-y-scroll h-[100vh] example">
 
                                 {bill.map((billing, index) => (
-                                    <div className="flex items-center bg-white w-[100%] rounded-xl cursor-pointer" key={index} onClick={()=>maintain(billing)}>
+                                    <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 items-center bg-white w-[100%] rounded-xl cursor-pointer" key={index} onClick={()=>maintain(billing)}>
                                         <div className="">
                                             <img src={billing.image} alt="" className="rounded-l-xl" />
                                         </div>
@@ -78,10 +78,10 @@ const ListOfServices = () => {
                             </div>}
                         </div>
                         <div className="space-y-3 w-[100%] bg-white">
-                            <div className='p-4'>
-                                <img src={image} alt="" className="w-4/5 h-[250px] object-cover" />
+                            <div className='py-4'>
+                                <img src={image} alt="" className="w-full rounded-lg h-[250px] object-cover" />
                             </div>
-                            <div className="p-5 space-y-3">
+                            <div className="py-5 space-y-3">
                                 <h1 className="font-bold text-xl">{name}</h1>
                                 <p className="">{content}</p>
                                 

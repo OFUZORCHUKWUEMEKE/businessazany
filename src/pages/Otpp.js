@@ -59,7 +59,7 @@ const Otpp = () => {
             <Navbar />
             <div className="m-auto w-[85%]">
                 <div className="w-full flex justify-center">
-                    <div className=" text-sm py-14 md:w-[30%]">
+                    <div className=" text-sm py-14 md:w-[30%] w-[95%]">
                         <div className=" text-center space-y-3">
                             <h1 className="font-bold text-3xl main">Resent Otp</h1>
                             {/* <p className="text-md">Provide the OTP sent to Joel@gmail.com</p> */}

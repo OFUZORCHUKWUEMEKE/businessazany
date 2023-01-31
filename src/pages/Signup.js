@@ -89,7 +89,7 @@ const SignUp = () => {
     return (
         <div className='overflow-x-hidden'>
             <Navbar />
-            <div className='w-full flex justify-center'>
+            <div className='md:w-full w-4/5 mx-auto flex justify-center'>
                 <div className="mx-auto  text-sm py-12">
                     <div className="space-y-2 pb-8">
                         <h1 className="text-3xl font-bold main">Create Account</h1>
