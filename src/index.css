@@ -115,7 +115,7 @@ code {
 .bicycle{
   background-image: url("/public/images/Bicycle.png");
   background-size: cover;
-  height: 100vh;
+  /* height: 100vh; */
 }
 
 .blog5{

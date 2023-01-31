@@ -11,7 +11,7 @@ const Blog = () => {
         mainRef.current.scrollIntoView({behavior:"smooth"})
     },[])
     return (
-        <div ref={mainRef}>
+        <div ref={mainRef} className='overflow-hidden'>
             <div className="m-auto w-[85%] py-16">
                 <div className="space-y-2">
                     <div className="flex items-center gap-1 text-sm">
@@ -30,7 +30,7 @@ const Blog = () => {
                 </div>
                 <div className="">
                     <div className="blog-image pt-10">
-                        <img src="" alt="" className="h-[100vh] bicycle object-center" />
+                        <img src="/images/Bicycle.png" alt="" className="md:h-[70vh] rounded-md h-[50vh] bicycle object-cover w-full" />
                     </div>
                     <div className="blog-text">
                         <br /> <br />
@@ -71,7 +71,7 @@ const Blog = () => {
                 <div className="comments my-8">
                     <h1 className="text-2xl pt-5 font-semibold ">Comments</h1>
                     <div className="md:w-[60%]">
-                        <div className="flex items-center gap-5 my-5">
+                        <div className="flex items-center flex-wrap md:flex-nowrap  gap-5 my-5">
                             <div className="">
                                 <div className=" text-gray-500 rounded border border-gray-500 px-5 py-1">
                                     <p className="">Username</p>

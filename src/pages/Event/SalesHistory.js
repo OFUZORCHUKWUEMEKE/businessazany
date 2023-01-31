@@ -4,6 +4,7 @@ import { SlLocationPin } from "react-icons/sl"
 import { useState } from 'react';
 import TransactionTable from '../../components/Transaction';
 import Profile from '../../components/Profile';
+import { Link } from 'react-router-dom';
 
 const EventHistory = () => {
     const [tab, setTab] = useState(false)
@@ -83,9 +84,10 @@ const EventHistory = () => {
                     </div>
                 </div>
                 <div className="flex justify-end pt-[20vh] pb-[5vh]">
-                    <button className="bg-[#1B7CFC] py-4 px-6 text-sm rounded-md text-white">Create more events</button>
+                    <Link to='/event/create'>
+                        <button className="bg-[#1B7CFC] py-4 px-6 text-sm rounded-md text-white">Create more events</button>
+                    </Link>
                 </div>
-
                 {/* Sales History */}
                 <div className="">
                     <h1 className="font-bold text-2xl">Sales History</h1>
