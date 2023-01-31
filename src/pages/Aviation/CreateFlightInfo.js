@@ -117,7 +117,7 @@ const CreateFighteInfo = () => {
                                         label="departure"
                                         onChange={handleDepature}
                                     >
-                                        <MenuItem value={10}>{`${aviation.departure} - ${aviation.destination}`}</MenuItem>
+                                        <MenuItem value={10}>{`${aviation?.departure} - ${aviation?.destination}`}</MenuItem>
                                     </Select>
                                 </FormControl>
                             </Box>

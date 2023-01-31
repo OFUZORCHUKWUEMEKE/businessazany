@@ -121,7 +121,7 @@ const CreateVehicleInfo = () => {
                                         label="departure"
                                         onChange={handleDepature}
                                     >
-                                        <MenuItem value={10}>{`${transport.departure} - ${transport.destination}`}</MenuItem>
+                                        <MenuItem value={10}>{`${transport?.departure} - ${transport?.destination}`}</MenuItem>
                                     </Select>
                                 </FormControl>
                             </Box>
