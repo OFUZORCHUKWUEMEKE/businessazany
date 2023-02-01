@@ -96,7 +96,7 @@ const CreateFighteInfo = () => {
         <>
             <Navbar />
             <div className=' py-5'>
-                <div className='lg:w-[25%] md:[50%] w-[85%] mx-auto'>
+                <div className='md:w-[25%] w-[85%] mx-auto'>
                     <Stack spacing={3}>
                         <h1 className='text-2xl font-bold text-center pb-4'>Create Fight Information</h1>
                         <form className='w-full space-y-6' onSubmit={handleSubmit}>

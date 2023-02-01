@@ -82,7 +82,7 @@ const CreateTicketInfo = () => {
                 navigate("/transport/transportHistory")
             }, 1000)
         } catch (error) {
-            let i=0
+            let i = 0
             for (i; i <= error.response.data.data.errors.length; i++) {
                 toast.error(error.response.data.data.errors[i])
             }
@@ -94,7 +94,7 @@ const CreateTicketInfo = () => {
         <div className="">
             <Navbar />
             <div className='py-16'>
-                <div className='lg:w-[25%] md:w-[50%] w-[85%] mx-auto'>
+                <div className='md:w-[25%] w-[85%] mx-auto'>
                     <Stack spacing={3}>
                         <h1 className='text-2xl font-bold text-center pb-4'>Create Ticket Information</h1>
                         <form className='w-full space-y-8' onSubmit={handleSubmit}>
@@ -102,26 +102,28 @@ const CreateTicketInfo = () => {
                                 {/* <div className='py-1'>
                                     <TextField label="Ticket Type" name='ticket_type' onChange={handleChange} id="outlined-size-normal" className='w-[100%] bg-gray-100 text-sm' />
                                 </div> */}
-                                <div className='py-1'>
-                                    <FormControl fullWidth>
-                                        <InputLabel id="demo-simple-select-label">Ticket Type</InputLabel>
-                                        <Select
-                                            labelId="demo-simple-select-label"
-                                            id="demo-simple-select"
-                                            value={ticket_type}
-                                            label="Age"
-                                            onChange={(e) => setTicketType(e.target.value)}
-                                        >
-                                            <MenuItem value={'Departure'}>Departure</MenuItem>
-                                            <MenuItem value={'Return'}>Return</MenuItem>
-                                        </Select>
-                                    </FormControl>
-                                </div>
-                                <div className='py-1'>
-                                    <TextField label="Reward Point" name='reward_point_amount' onChange={handleChange} id="outlined-size-normal" className='w-[100%] bg-gray-100 text-sm' />
-                                </div>
-                                <div className='py-1'>
-                                    <TextField label="Route" name='route' value={`${transport?.departure} - ${transport?.destination}`} id="outlined-size-normal" className='w-[100%] bg-gray-100 text-sm' />
+                                <div className="space-y-3">
+                                    <div className='py-1'>
+                                        <FormControl fullWidth>
+                                            <InputLabel id="demo-simple-select-label">Ticket Type</InputLabel>
+                                            <Select
+                                                labelId="demo-simple-select-label"
+                                                id="demo-simple-select"
+                                                value={ticket_type}
+                                                label="Age"
+                                                onChange={(e) => setTicketType(e.target.value)}
+                                            >
+                                                <MenuItem value={'Departure'}>Departure</MenuItem>
+                                                <MenuItem value={'Return'}>Return</MenuItem>
+                                            </Select>
+                                        </FormControl>
+                                    </div>
+                                    <div className='py-1'>
+                                        <TextField label="Reward Point" name='reward_point_amount' onChange={handleChange} id="outlined-size-normal" className='w-[100%] bg-gray-100 text-sm' />
+                                    </div>
+                                    <div className='py-1'>
+                                        <TextField label="Route" name='route' value={`${transport?.departure} - ${transport?.destination}`} id="outlined-size-normal" className='w-[100%] bg-gray-100 text-sm' />
+                                    </div>
                                 </div>
 
                                 {/* <div className='py-1'>

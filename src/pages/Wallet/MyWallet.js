@@ -23,12 +23,12 @@ const MyWallet = () => {
                         <img src="/images/Vehicle.png" alt="" className="rounded-xl object-cover w-[250%] h-[30vh]" />
                         <img src="/images/Vehicle.png" alt="" className="rounded-xl object-cover w-[250%] h-[30vh]" />
                     </div>
-                    <div className="flex items-center gap-5 text-white">
-                        <div className="bg-[#1B7CFC] text-center w-[15%] h-[100px] flex flex-col items-center justify-center rounded-md space-y-2 cursor-pointer">
+                    <div className="flex items-center gap-5 text-white w-[100%]">
+                        <div className="bg-[#1B7CFC] text-center md:w-[15%] w-[50%] h-[100px] flex flex-col items-center justify-center rounded-md space-y-2 cursor-pointer">
                             {/* <WalletDetailsModal/> */}
                             <WithdrawalModal/>
                         </div>
-                        <div onClick={()=> setCalculatorModal(true)} className="bg-[#24B18D] text-center w-[15%] h-[100px] flex flex-col items-center justify-center rounded-md space-y-2 cursor-pointer">
+                        <div onClick={()=> setCalculatorModal(true)} className="bg-[#24B18D] text-center md:w-[15%] w-[50%] h-[100px] flex flex-col items-center justify-center rounded-md space-y-2 cursor-pointer">
                         <CalculatorModal/>
                         </div>
                     </div>

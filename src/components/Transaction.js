@@ -45,7 +45,7 @@ export default function TransactionTable() {
               <TableCell component="th" scope="row">
                 {row.name}
               </TableCell>
-              <TableCell align="center">{row.calories}</TableCell>
+              <TableCell align="center ">{row.calories}</TableCell>
               <TableCell align="center">{row.fat}</TableCell>
               <TableCell align="center">{row.carbs}</TableCell>
               <TableCell align="center">{row.protein}</TableCell>

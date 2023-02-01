@@ -116,18 +116,30 @@ const AviationHistory = () => {
                         </div>
 
                         {action && <div className="md:grid grid-cols-3 items-center gap-3 ">
-                            {route && (
+                            {/* {route && ( */}
                                 <>
-                                    {route.map((route, index) => (
+                                    {/* {route.map((route, index) => ( */}
                                         <div className="">
                                             <img src="/images/Vehicle.png" alt="" className="rounded-t-xl object-cover w-[250%] h-[30vh]" />
                                             <div className="p-3 py-2 space-y-4 flex flex-col bg-white h-[10vh] text-center justify-center rounded-b-xl">
-                                                <h1 className="font-semibold">{route.departure} - {route.destination}</h1>
+                                                <h1 className="font-semibold">{route?.departure} - {route?.destination}</h1>
                                             </div>
                                         </div>
-                                    ))}
+                                        <div className="">
+                                            <img src="/images/Vehicle.png" alt="" className="rounded-t-xl object-cover w-[250%] h-[30vh]" />
+                                            <div className="p-3 py-2 space-y-4 flex flex-col bg-white h-[10vh] text-center justify-center rounded-b-xl">
+                                                <h1 className="font-semibold">{route?.departure} - {route?.destination}</h1>
+                                            </div>
+                                        </div>
+                                        <div className="">
+                                            <img src="/images/Vehicle.png" alt="" className="rounded-t-xl object-cover w-[250%] h-[30vh]" />
+                                            <div className="p-3 py-2 space-y-4 flex flex-col bg-white h-[10vh] text-center justify-center rounded-b-xl">
+                                                <h1 className="font-semibold">{route?.departure} - {route?.destination}</h1>
+                                            </div>
+                                        </div>
+                                    {/* ))} */}
                                 </>
-                            )}
+                            {/* )} */}
 
 
                         </div>}
@@ -146,33 +158,73 @@ const AviationHistory = () => {
 
                         {old && <div className=" space-y-5 md:space-y-0">
                             <Grid container spacing={2}>
-                                {ticket && (
+                                {/* {ticket && ( */}
                                     <>
-                                        {ticket.map((ticket, index) => (
-                                            <Grid item xs={12} md={6} key={index}>
+                                        {/* {ticket.map((ticket, index) => ( */}
+                                            <Grid item xs={12} md={6} >
                                                 <div className="py-3">
                                                     <div className="bg-[#F2F8FF] flex items-center justify-between p-3 text-sm ">
-                                                        <h1 className="text-[#1B7CFC] font-semibold">{ticket.flight[0].model}</h1>
-                                                        <p className="text-[#A0A0A0]">{ticket.type} trip</p>
+                                                        <h1 className="text-[#1B7CFC] font-semibold">{ticket?.flight[0]?.model}</h1>
+                                                        <p className="text-[#A0A0A0]">{ticket?.type} trip</p>
                                                     </div>
                                                     <div className="p-3 py-2 space-y-4 bg-white h-[20vh]  rounded-b-xl">
-                                                        <h1 className="font-semibold">{ticket.flight[0].model}</h1>
+                                                        <h1 className="font-semibold">{ticket?.flight[0]?.model}</h1>
                                                         <div className="flex items-center gap-10">
-                                                            <p className="font-semibold">{ticket.flight[0].route[0].departure}</p>
+                                                            <p className="font-semibold">{ticket?.flight[0]?.route[0]?.departure}</p>
                                                             <TbArrowsLeftRight className='text-gray-500' />
-                                                            <p className="font-semibold">{ticket.flight[0].route[0].destination}</p>
+                                                            <p className="font-semibold">{ticket?.flight[0]?.route[0]?.destination}</p>
                                                         </div>
                                                         <div className="flex items-center justify-between">
-                                                            <p className="font-semibold">{ticket.reward_point_amount}</p>
+                                                            <p className="font-semibold">{ticket?.reward_point_amount}</p>
+                                                            <TbEdit className='text-[#1B7CFC] text-xl' />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </Grid>
+                                            <Grid item xs={12} md={6} >
+                                                <div className="py-3">
+                                                    <div className="bg-[#F2F8FF] flex items-center justify-between p-3 text-sm ">
+                                                        <h1 className="text-[#1B7CFC] font-semibold">{ticket?.flight[0]?.model}</h1>
+                                                        <p className="text-[#A0A0A0]">{ticket?.type} trip</p>
+                                                    </div>
+                                                    <div className="p-3 py-2 space-y-4 bg-white h-[20vh]  rounded-b-xl">
+                                                        <h1 className="font-semibold">{ticket?.flight[0]?.model}</h1>
+                                                        <div className="flex items-center gap-10">
+                                                            <p className="font-semibold">{ticket?.flight[0]?.route[0]?.departure}</p>
+                                                            <TbArrowsLeftRight className='text-gray-500' />
+                                                            <p className="font-semibold">{ticket?.flight[0]?.route[0]?.destination}</p>
+                                                        </div>
+                                                        <div className="flex items-center justify-between">
+                                                            <p className="font-semibold">{ticket?.reward_point_amount}</p>
+                                                            <TbEdit className='text-[#1B7CFC] text-xl' />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </Grid>
+                                            <Grid item xs={12} md={6} >
+                                                <div className="py-3">
+                                                    <div className="bg-[#F2F8FF] flex items-center justify-between p-3 text-sm ">
+                                                        <h1 className="text-[#1B7CFC] font-semibold">{ticket?.flight[0]?.model}</h1>
+                                                        <p className="text-[#A0A0A0]">{ticket?.type} trip</p>
+                                                    </div>
+                                                    <div className="p-3 py-2 space-y-4 bg-white h-[20vh]  rounded-b-xl">
+                                                        <h1 className="font-semibold">{ticket?.flight[0]?.model}</h1>
+                                                        <div className="flex items-center gap-10">
+                                                            <p className="font-semibold">{ticket?.flight[0]?.route[0]?.departure}</p>
+                                                            <TbArrowsLeftRight className='text-gray-500' />
+                                                            <p className="font-semibold">{ticket?.flight[0]?.route[0]?.destination}</p>
+                                                        </div>
+                                                        <div className="flex items-center justify-between">
+                                                            <p className="font-semibold">{ticket?.reward_point_amount}</p>
                                                             <TbEdit className='text-[#1B7CFC] text-xl' />
                                                         </div>
                                                     </div>
                                                 </div>
                                             </Grid>
 
-                                        ))}
+                                        {/* ))} */}
                                     </>
-                                )}
+                                {/* )} */}
                             </Grid>
                             {/* <div className="md:grid grid-cols-2 items-center gap-3"> */}
 

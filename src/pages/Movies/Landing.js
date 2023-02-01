@@ -10,7 +10,7 @@ const Event = () => {
     return (
          <div className='bg-[#fafbfdd7]'>
             <Navbar />
-            <div className="md:h-[75vh] md:flex items-center m-auto w-[85%]">
+            <div className=" md:flex items-center m-auto w-[85%] my-10 md:my-0 space-y-16 md:space-y-0">
                 <div className="md:w-[30%]">
                     <Profile />
                 </div>

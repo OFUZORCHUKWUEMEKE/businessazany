@@ -7,7 +7,7 @@ const   AviationLanding = () => {
   return (
        <div className='bg-[#fafbfdd7]'>
             <Navbar />
-            <div className="md:h-[75vh] md:flex items-center m-auto w-[85%]">
+            <div className="md:h-[75vh] md:flex items-center m-auto w-[85%] md:my-0 my-10 md:space-y-0 space-y-16">
                 <div className="md:w-[30%]">
                     <Profile />
                 </div>

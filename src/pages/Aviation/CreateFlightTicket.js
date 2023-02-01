@@ -21,7 +21,7 @@ const CreateFlightTicket = () => {
         <>
             <Navbar />
             <div className=' py-5'>
-                <div className='lg:w-[25%] m:[50%] w-[85%] mx-auto'>
+                <div className='md:w-[25%] w-[85%] mx-auto'>
                     <Stack spacing={3}>
                         <h1 className='text-2xl font-bold text-center pb-4'>Create Flight Ticket</h1>
                         <form className='w-full space-y-6'>

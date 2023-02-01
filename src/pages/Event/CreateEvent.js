@@ -84,7 +84,7 @@ const CreateEvent = () => {
         <>
             <Navbar />
             <div className='max-h-screen py-5'>
-                <div className='w-[25%] mx-auto'>
+                <div className='md:w-[25%] w-[85%] mx-auto'>
                     <Stack spacing={3}>
                         <h1 className='text-2xl font-bold text-center'>Create Event</h1>
                         <form className='w-full space-y-4' onSubmit={createEvent}>

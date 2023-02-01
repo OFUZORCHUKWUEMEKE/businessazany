@@ -78,7 +78,7 @@ const CreateRoute = () => {
         <div className="bg-[#fafbfdd7]">
             <Navbar />
             <div className=' py-16'>
-                <div className='lg:w-[25%] md:w-[50%] mx-auto w-[85%]'>
+                <div className='md:w-[25%] mx-auto w-[85%]'>
                     <form className='w-full space-y-6' onSubmit={handleSubmit}>
                         <h1 className='text-2xl font-bold text-center pb-4'>Create Route Information</h1>
                         {/* <Box sx={{ minWidth: 120 }}>

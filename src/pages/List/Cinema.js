@@ -7,6 +7,8 @@ import CinemaModal from '../../components/list/cinema/CinemaModal';
 // import QuestionModal from '../../components/list/Question';
 // import StatusModal from '../../components/list/Status';
 import { useNavigate } from 'react-router-dom';
+import { BiSearch } from "react-icons/bi"
+
 const CinemaList = () => {
     const [open, setOpen] = React.useState(false);
     const handleOpen = () => setOpen(true);
@@ -18,11 +20,11 @@ const CinemaList = () => {
     const handleOpener = () => setOpener(true);
     const handleCloseer = () => setOpener(false);
 
-    const trigger = ()=>{
+    const trigger = () => {
         handleClose()
         handleOpened()
     }
-    const success=()=>{
+    const success = () => {
         handleCloseed()
         handleOpener()
     }
@@ -32,88 +34,88 @@ const CinemaList = () => {
         <>
             <div className='bg-gray-50 min-h-screen'>
                 <div className='bg-white py-6'>
-                    <div className='flex justify-between items-center w-4/5 mx-auto'>
+                    <div className='flex justify-between items-center w-[90%] m-auto'>
                         <div className='flex items-center space-x-4'>
                             <IconButton>
                                 <ArrowBackIcon />
                             </IconButton>
-                            <h2>Transport</h2>
+                            <h2>Cinema</h2>
                         </div>
                         <div>
-                            <input className='py-2 px-6 bg-gray-100 rounded-md border border-gray-100 outline-none ' placeholder='Search Transport' />
+                            <input className='hidden md:flex py-2 px-6 bg-gray-100 rounded-md border border-gray-100 outline-none ' placeholder='Search Events' />
+                            <BiSearch className='md:hidden text-2xl' />
                         </div>
                     </div>
                 </div>
                 <div className='mt-3 py-2'>
-                    <div className="w-3/5 mx-auto space-y-3">
-
-                        <div className='flex items-center space-x-4 cursor-pointer' onClick={()=>navigate("/list/single/cinema")}>
+                    <div className="flex flex-col items-center space-y-5 w-[90%] m-auto">
+                        <div className='flex items-center space-x-4 cursor-pointer' onClick={() => navigate("/list/single/cinema")}>
                             <div>
-                                <img src="/images/cinema.png" className="w-4/5 mx-auto" />
+                                <img src="/images/cinema.png" className="md:rounded rounded-l-xl md:h-[250px] md:w-[350px] w-[135px] h-[148px] object-cover md:mx-auto" />
                             </div>
-                            <div className='px-3'>
-                                <h2 className='font-bold'>Genesis Cinema</h2>
-                                <div className='py-3 space-y-4'>
-
-                                    <div className='flex items-center space-x-1'>
-                                        <IconButton>
-                                            <LocationOnIcon />
-                                        </IconButton>
-
-                                        <h2 className='text-gray-400'>13 Tejusho, Yaba</h2>
+                            <div className='space-y-2 md:space-y-4'>
+                                <h2 className='font-bold text-sm md:text-[18px]'>Genesis Cinema</h2>
+                                <div className='flex items-center'>
+                                    <div className="">
+                                        {/* <IconButton> */}
+                                        <LocationOnIcon className='text-gray-500' />
+                                        {/* </IconButton> */}
                                     </div>
-
-                                </div>
-                            </div>
-                        </div>
-                        <div className='flex items-center space-x-4 cursor-pointer' onClick={()=>navigate("/list/single/cinema")}>
-                            <div>
-                                <img src="/images/cinema.png" className="w-4/5 mx-auto" />
-                            </div>
-                            <div className='px-3'>
-                                <h2 className='font-bold'>Genesis Cinema</h2>
-                                <div className='py-3 space-y-4'>
-
-                                    <div className='flex items-center space-x-1'>
-                                        <IconButton>
-                                            <LocationOnIcon />
-                                        </IconButton>
-
+                                    <div className="">
                                         <h2 className='text-gray-400'>13 Tejusho, Yaba</h2>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div className='flex items-center space-x-4 cursor-pointer' onClick={()=>navigate("/list/single/cinema")}>
+                        <div className='flex items-center space-x-4 cursor-pointer' onClick={() => navigate("/list/single/cinema")}>
                             <div>
-                                <img src="/images/cinema.png" className="w-4/5 mx-auto" />
+                                <img src="/images/cinema.png" className="md:rounded rounded-l-xl md:h-[250px] md:w-[350px] w-[135px] h-[148px] object-cover md:mx-auto" />
                             </div>
-                            <div className='px-3'>
-                                <h2 className='font-bold'>Genesis Cinema</h2>
-                                <div className='py-3 space-y-4'>
-
-                                    <div className='flex items-center space-x-1'>
-                                        <IconButton>
-                                            <LocationOnIcon />
-                                        </IconButton>
+                            <div className='space-y-2 md:space-y-4'>
+                                <h2 className='font-bold text-sm md:text-[18px]'>Genesis Cinema</h2>
+                                <div className='flex items-center'>
+                                    <div className="">
+                                        {/* <IconButton> */}
+                                        <LocationOnIcon className='text-gray-500' />
+                                        {/* </IconButton> */}
+                                    </div>
+                                    <div className="">
                                         <h2 className='text-gray-400'>13 Tejusho, Yaba</h2>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div className='flex items-center space-x-4 cursor-pointer' onClick={()=>navigate("/list/single/cinema")}>
+                        <div className='flex items-center space-x-4 cursor-pointer' onClick={() => navigate("/list/single/cinema")}>
                             <div>
-                                <img src="/images/cinema.png" className="w-4/5 mx-auto" />
+                                <img src="/images/cinema.png" className="md:rounded rounded-l-xl md:h-[250px] md:w-[350px] w-[135px] h-[148px] object-cover md:mx-auto" />
                             </div>
-                            <div className='px-3'>
-                                <h2 className='font-bold'>Genesis Cinema</h2>
-                                <div className='py-3 space-y-4'>
-
-                                    <div className='flex items-center space-x-1'>
-                                        <IconButton>
-                                            <LocationOnIcon />
-                                        </IconButton>
-
+                            <div className='space-y-2 md:space-y-4'>
+                                <h2 className='font-bold text-sm md:text-[18px]'>Genesis Cinema</h2>
+                                <div className='flex items-center'>
+                                    <div className="">
+                                        {/* <IconButton> */}
+                                        <LocationOnIcon className='text-gray-500' />
+                                        {/* </IconButton> */}
+                                    </div>
+                                    <div className="">
+                                        <h2 className='text-gray-400'>13 Tejusho, Yaba</h2>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div className='flex items-center space-x-4 cursor-pointer' onClick={() => navigate("/list/single/cinema")}>
+                            <div>
+                                <img src="/images/cinema.png" className="md:rounded rounded-l-xl md:h-[250px] md:w-[350px] w-[135px] h-[148px] object-cover md:mx-auto" />
+                            </div>
+                            <div className='space-y-2 md:space-y-4'>
+                                <h2 className='font-bold text-sm md:text-[18px]'>Genesis Cinema</h2>
+                                <div className='flex items-center'>
+                                    <div className="">
+                                        {/* <IconButton> */}
+                                        <LocationOnIcon className='text-gray-500' />
+                                        {/* </IconButton> */}
+                                    </div>
+                                    <div className="">
                                         <h2 className='text-gray-400'>13 Tejusho, Yaba</h2>
                                     </div>
                                 </div>
