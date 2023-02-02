@@ -29,7 +29,7 @@ const SingleTransport = () => {
         <>
             <div className='md:bg-gray-50 bg-white min-h-screen'>
                 <div className='bg-white py-6'>
-                    <div className='flex justify-between items-center w-[90%] mx-auto'>
+                    <div className='flex justify-between items-center w-[85%] mx-auto'>
                         <div className='flex items-center space-x-4'>
                             <IconButton>
                                 <ArrowBackIcon />
@@ -39,8 +39,8 @@ const SingleTransport = () => {
                     </div>
                 </div>
 
-                <div className="md:bg-gray-50">
-                    <div className='w-[95%] m-auto py-4 mt-3'>
+                <div className="md:bg-gray-50 ">
+                    <div className='w-[85%] m-auto py-4 mt-3'>
                         <div className='flex justify-between md:w-[40%] items-center space-x-6'>
                             <div>
                                 <h2 className="text-blue-500 cursor-pointer underline decoration-2">Return</h2>
@@ -212,14 +212,14 @@ const SingleTransport = () => {
                                 </Grid>
                             </div>
                         </div>
-                        <div className='py-2 md:w-[85%] m-auto my-10'>
+                        <div className='py-2  m-auto my-10 text-[10px] md:text-[14px]'>
                             <div className='py-2'>
                                 <h2 className='text-xl font-bold'>Booking List</h2>
                             </div>
 
-                            <div className=' md:mx-auto mt-3 py-6 flex items-center'>
-                                <div className='md:bg-white flex-1 py-4 px-3 md:shadow-md rounded-md'>
-                                    <div className='md:w-[90%] mx-auto flex justify-between items-center'>
+                            <div className=' mx-auto mt-3 py-1 flex items-center w-[85%]'>
+                                <div className='flex-1 py-2 px-3 rounded-md '>
+                                    <div className=' bg-white shadow-md p-4 mx-auto flex space-x-1 justify-between items-center'>
                                         <div>
                                             <p className='text-gray-400'>Route</p>
                                         </div>
@@ -236,12 +236,11 @@ const SingleTransport = () => {
                                                 <h2 className='text-gray-400'>Departure</h2>
                                             </div>
                                         </div>
-                                        <div className="cursor-pointer">
+                                        <div className="cursor-pointer md:flex hidden">
                                             <div>
 
                                             </div>
                                         </div>
-
                                     </div>
                                 </div>
 
@@ -274,8 +273,8 @@ const SingleTransport = () => {
                                 </div>
                             </div>
                             <div className='md:w-[95%] mx-auto mt-3 py-1 flex items-center'>
-                                <div className=' flex-1 py-2 px-3 rounded-md'>
-                                    <div className='md:w-[90%] mx-auto flex justify-between items-center gap-5'>
+                                <div className='flex-1 py-2 px-3 rounded-md'>
+                                    <div className='md:w-[90%] mx-auto flex justify-between items-center'>
                                         <div>
                                             <p className='text-gray-400'>Lagos-Kwara</p>
                                         </div>
@@ -289,7 +288,7 @@ const SingleTransport = () => {
                                         </div>
                                         <div className="cursor-pointer">
                                             <div>
-                                                <h2 className='text-gray-400'>20/22/2022  1:30PM</h2>
+                                                <h2 className='text-gray-400'>20/22/2022   1:30PM</h2>
                                             </div>
                                         </div>
                                         <div className="cursor-pointer md:flex hidden">
@@ -297,10 +296,13 @@ const SingleTransport = () => {
                                                 <button onClick={() => handleOpen()} className='py-3 px-3 bg-[#1B7CFC] rounded-md text-white'>Book Now</button>
                                             </div>
                                         </div>
-
                                     </div>
+                                    <div className="cursor-pointer md:hidden flex justify-center pb-[10vh] my-10">
+                                            <div className='mt-4 py-1'>
+                                                <button onClick={() => handleOpen()} className='py-3 px-8 bg-[#1B7CFC] rounded-md text-white'>Book Now</button>
+                                            </div>
+                                        </div>
                                 </div>
-
                             </div>
                         </div>
                     </div>

@@ -122,7 +122,6 @@ function App() {
       {/* Wallet */}
       <Route path="/wallet/myWallet" element={<MyWallet />} />
 
-
       <Route path="/list/event" element={<EventList />} />
       <Route path="/list/transport" element={<Transportlist />} />
       <Route path="/list/cinema" element={<CinemaList />} />
