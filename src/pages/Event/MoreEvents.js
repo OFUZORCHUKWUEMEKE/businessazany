@@ -48,7 +48,7 @@ const MoreEvents = () => {
 
     ]
     return (
-        <div className='xl:bg-[#F5F5F5] bg-white'>
+        <div className='md:bg-[#F5F5F5] bg-white'>
             <Navbar />
             <div className="m-auto w-[85%] md:py-20 ">
                 <div className="md:grid grid-cols-10 gap-10">
@@ -171,7 +171,7 @@ const MoreEvents = () => {
                                 <img src="/images/Old.png" alt="" className="md:rounded-t-xl rounded-l-xl object-cover md:w-[250%] h-[156px] w-[132px] md:h-[30vh]" />
                                 <div className="p-3 py-2 space-y-4 flex flex-col bg-white ">
                                     <h1 className="font-semibold">Event 2</h1>
-                                    <div className=" text-white flex items-center text-[8px] font-bold md:font-semibold md:grid grid-cols-2 gap-2">
+                                    <div className=" text-white flex items-center text-[8px] text-center md:text-[14px] font-bold md:font-semibold md:grid grid-cols-2 gap-2">
                                         <p className="md:bg-[#1B7CFC] md:text-white text-[#1B7CFC] md:rounded-xl py-1 md:px-4">Reg. 30RP</p>
                                         <p className="md:bg-[#FB4A4A] md:text-white text-[#FB4A4A] md:rounded-xl py-1 md:px-4">VIP 50RP</p>
                                         <p className="md:bg-[#007254] md:text-white text-[#007254] md:rounded-xl py-1 md:px-4">VVIP 80RP</p>
@@ -185,7 +185,7 @@ const MoreEvents = () => {
                                 <img src="/images/Old.png" alt="" className="md:rounded-t-xl rounded-l-xl object-cover md:w-[250%] h-[156px] w-[132px] md:h-[30vh]" />
                                 <div className="p-3 py-2 space-y-4 flex flex-col bg-white">
                                     <h1 className="font-semibold">Event 2</h1>
-                                    <div className=" text-white flex items-center text-[8px] font-bold md:font-semibold md:grid grid-cols-2 gap-2">
+                                    <div className=" text-white flex items-center text-[8px] text-center md:text-[14px] font-bold md:font-semibold md:grid grid-cols-2 gap-2">
                                         <p className="md:bg-[#1B7CFC] md:text-white text-[#1B7CFC] md:rounded-xl py-1 md:px-4">Reg. 30RP</p>
                                         <p className="md:bg-[#FB4A4A] md:text-white text-[#FB4A4A] md:rounded-xl py-1 md:px-4">VIP 50RP</p>
                                         <p className="md:bg-[#007254] md:text-white text-[#007254] md:rounded-xl py-1 md:px-4">VVIP 80RP</p>
@@ -199,7 +199,7 @@ const MoreEvents = () => {
                                 <img src="/images/Old.png" alt="" className="md:rounded-t-xl rounded-l-xl object-cover md:w-[250%] h-[156px] w-[132px] md:h-[30vh]" />
                                 <div className="p-3 py-2 space-y-4 flex flex-col bg-white">
                                     <h1 className="font-semibold">Event 2</h1>
-                                    <div className=" text-white flex items-center text-[8px] font-bold md:font-semibold md:grid grid-cols-2 gap-2">
+                                    <div className=" text-white flex items-center text-[8px] text-center md:text-[14px] font-bold md:font-semibold md:grid grid-cols-2 gap-2">
                                         <p className="md:bg-[#1B7CFC] md:text-white text-[#1B7CFC] md:rounded-xl py-1 md:px-4">Reg. 30RP</p>
                                         <p className="md:bg-[#FB4A4A] md:text-white text-[#FB4A4A] md:rounded-xl py-1 md:px-4">VIP 50RP</p>
                                         <p className="md:bg-[#007254] md:text-white text-[#007254] md:rounded-xl py-1 md:px-4">VVIP 80RP</p>

@@ -5,6 +5,8 @@ import EventModal from '../../components/list/EventModal';
 import QuestionModal from '../../components/list/Question';
 import StatusModal from '../../components/list/Status';
 import { useNavigate } from 'react-router-dom';
+import { BiSearch } from "react-icons/bi"
+
 const AviationList = () => {
     const [open, setOpen] = React.useState(false);
     const handleOpen = () => setOpen(true);
@@ -41,16 +43,17 @@ const AviationList = () => {
                             <h2>Aviation</h2>
                         </div>
                         <div>
-                            <input className='py-2 px-6 bg-gray-100 rounded-md border border-gray-100 outline-none ' placeholder='Search Aviation' />
+                            <input className='hidden md:flex py-2 px-6 bg-gray-100 rounded-md border border-gray-100 outline-none ' placeholder='Search Events' />
+                            <BiSearch className='md:hidden text-2xl' />
                         </div>
                     </div>
                 </div>
                 <div className='mt-3 py-2'>
                     <div className="w-3/5 mx-auto space-y-3">
 
-                        <div className='flex items-center space-x-4 cursor-pointer' onClick={()=>navigate("/list/single/aviation")}>
+                        <div className='flex items-center space-x-4 cursor-pointer' onClick={() => navigate("/list/single/aviation")}>
                             <div>
-                                <img src="/images/peace.png" className="w-4/5 mx-auto" />
+                                <img src="/images/peace.png" className="md:rounded rounded-l-xl md:h-[250px] md:w-[350px] w-[135px] h-[148px] object-cover md:mx-auto" />
                             </div>
                             <div className='px-3'>
                                 <h2 className='font-bold'>Air Peace</h2>
@@ -62,9 +65,9 @@ const AviationList = () => {
 
 
                         </div>
-                        <div className='flex items-center space-x-4 cursor-pointer' onClick={()=>navigate("/list/single/aviation")}>
+                        <div className='flex items-center space-x-4 cursor-pointer' onClick={() => navigate("/list/single/aviation")}>
                             <div>
-                                <img src="/images/aero.png" className="w-4/5 mx-auto" />
+                                <img src="/images/aero.png" className="md:rounded rounded-l-xl md:h-[250px] md:w-[350px] w-[135px] h-[148px] md:object-contain object-cover md:mx-auto" />
                             </div>
                             <div className='px-3'>
                                 <h2 className='font-bold'>Aero</h2>

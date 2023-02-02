@@ -106,25 +106,26 @@ const TransportHistory = () => {
     }
 
     return (
-        <div className='bg-[#F5F5F5]'>
+        <div className='md:bg-[#F5F5F5]'>
             <Navbar />
-            <div className="m-auto w-[85%] py-20">
+            <div className="m-auto w-[85%] md:py-20 ">
                 <div className="md:grid grid-cols-10 gap-10">
                     <div className=" col-span-3">
                         <Profile />
                     </div>
 
                     <div className="space-y-5 col-span-7">
-                        <div className="shadow-md flex justify-around bg-white p-3 gap-20 px-20 mb-10 ">
-                            <p className={action ? `cursor-pointer text-blue-500` : 'cursor-pointer  text-black'} onClick={() => handleAction()}>Routes</p>
-                            <p className={center ? `cursor-pointer text-blue-500` : 'cursor-pointer text-black'} onClick={() => handleCenter()}>Vehicle</p>
-                            <p className={old ? `cursor-pointer text-blue-500` : 'cursor-pointer text-black'} onClick={() => handleOld()}>Tickets</p>
+                        <div className="md:shadow-md flex justify-around md:bg-white mt-3 md:mt-0 p-3 gap-20 mb-10 ">
+                            <p className={action ? `cursor-pointer text-blue-500 underline decoration-2` : 'cursor-pointer  text-black'} onClick={() => handleAction()}>Routes</p>
+                            <p className={center ? `cursor-pointer text-blue-500 underline decoration-2` : 'cursor-pointer text-black'} onClick={() => handleCenter()}>Vehicle</p>
+                            <p className={old ? `cursor-pointer text-blue-500 underline decoration-2` : 'cursor-pointer text-black'} onClick={() => handleOld()}>Tickets</p>
                         </div>
 
-                        {action && <div className="md:grid grid-cols-3 items-center gap-3 ">
+                        {action && <div className="md:grid grid-cols-3 items-center gap-3 space-y-6 md:space-y-0">
                             {route && (
                                 <>
-                                    {route?.map((route, index) => (
+
+                                    {/* {route?.map((route, index) => (
                                         <React.Fragment key={route.id}>
                                             {!isSelected && <div className="relative" >
                                                 <div className='absolute right-1 top-4'>
@@ -152,7 +153,16 @@ const TransportHistory = () => {
                                             </div>}
                                         </React.Fragment>
 
-                                    ))}
+                                    ))} */}
+
+                                    <div className="flex items-center md:block">
+                                        <img src="/images/event (1).png" alt="" className="md:rounded-t-xl rounded-l-xl object-cover md:w-[250%] h-[156px] w-[132px] md:h-[30vh]" />
+                                        <div className="p-3 py-2 space-y-4 flex flex-col bg-white md:h-[15vh] text-center justify-center rounded-b-xl">
+                                            {/* <h1 className="font-semibold">{route?.departure} - {route?.destination}</h1> */}
+                                            <p className="text-blue-500">CRJ 7</p>
+                                            <h1 className="font-semibold">Okota, Lagos-Enugu</h1>
+                                        </div>
+                                    </div>
                                 </>
                             )}
 
@@ -161,7 +171,7 @@ const TransportHistory = () => {
                         {center && <div className="md:grid grid-cols-3 items-center gap-3 ">
                             {vehicle && (
                                 <>
-                                    {vehicle.map((vehicle, index) => (
+                                    {/* {vehicle.map((vehicle, index) => (
                                         <div className="" key={index}>
                                             <img src="/images/Vehicle.png" alt="" className="rounded-t-xl object-cover w-[250%] h-[30vh]" />
                                             <div className="p-3 py-2 space-y-4 flex flex-col bg-white h-[10vh] text-center justify-center rounded-b-xl">
@@ -169,7 +179,15 @@ const TransportHistory = () => {
                                                 <h1 className="font-semibold">{vehicle.route[0].departure} - {vehicle.route[0].destination}</h1>
                                             </div>
                                         </div>
-                                    ))}
+                                    ))} */}
+                                            <div className="flex items-center md:block">
+                                        <img src="/images/event (1).png" alt="" className="md:rounded-t-xl rounded-l-xl object-cover md:w-[250%] h-[156px] w-[132px] md:h-[30vh]" />
+                                        <div className="p-3 py-2 space-y-4 flex flex-col bg-white md:h-[15vh] text-center justify-center rounded-b-xl">
+                                            {/* <h1 className="font-semibold">{route?.departure} - {route?.destination}</h1> */}
+                                            <p className="text-blue-500">CRJ 7</p>
+                                            <h1 className="font-semibold">Okota, Lagos-Enugu</h1>
+                                        </div>
+                                    </div>
                                 </>
                             )}
                         </div>}
@@ -213,21 +231,21 @@ const TransportHistory = () => {
                         </div>}
                     </div>
                 </div>
-                <div className="flex justify-end pt-[20vh] pb-[5vh]">
+                <div className="md:flex md:justify-end md:pt-[12vh] pt-[30px] pb-[10vh]">
                     {action && <Link to="/transport/createRoute">
-                        <button className="bg-[#1B7CFC] py-4 px-6 text-sm rounded-md text-white">Create Route</button>
+                        <button className="bg-[#1B7CFC] w-[100%] py-4 px-6 text-sm rounded-md text-white">Create Route</button>
                     </Link>}
                     {center && <Link to="/transport/createVehicleInfo">
-                        <button className="bg-[#1B7CFC] py-4 px-6 text-sm rounded-md text-white">Add Vehicle</button>
+                        <button className="bg-[#1B7CFC] w-[100%] py-4 px-6 text-sm rounded-md text-white">Add Vehicle</button>
                     </Link>}
                     {old && <Link to="/transport/createTicketInfo">
-                        <button className="bg-[#1B7CFC] py-4 px-6 text-sm rounded-md text-white">Add Ticket</button>
+                        <button className="bg-[#1B7CFC] w-[100%] py-4 px-6 text-sm rounded-md text-white">Add Ticket</button>
                     </Link>}
                 </div>
 
                 {/* Sales History */}
                 <div className="">
-                    <h1 className="font-bold text-2xl">Sales History</h1>
+                    <h1 className="font-bold md:text-2xl">Sales History</h1>
                     <div className='py-4'>
                         <TransactionTable />
                     </div>
